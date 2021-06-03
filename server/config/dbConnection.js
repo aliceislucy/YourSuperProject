@@ -8,7 +8,7 @@ mongoose
     useFindAndModify: false,
   })
   .then((self) => {
-    console.log(`Connected to ${self.connection.name}`);
+    console.log(`Connected to ${self.connection.name} backend server <3`);
   })
   .catch((err) => {
     console.log(`An error occurred while connecting to the database...`);

@@ -12,19 +12,15 @@ const MongoStore = require("connect-mongo");
 const app = express();
 const _DEV_MODE = false;
 
-
-
 //// ROUTERS ////
 
-// app.use("/api/auth", require("./routes/auth"));
+//app.use("/api/auth", require("./routes/auth"));
 // app.use("/api/users", require("./routes/users"));
 // app.use("/api/products", require("./routes/products"));
 // app.use("/api/carts", require("./routes/carts"));
 // app.use("/api/orders", require("./routes/orders"));
 // app.use("/api/ingredients", require("./routes/ingredients"));
 // app.use("/api/comments", require("./routes/comments"));
-
-
 
 //// CORS SETUP ////
 
@@ -37,7 +33,16 @@ app.use(
   })
 );
 
+//// SESSION ////
 
+app.use(
+  session({
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 
 //// GENERAL SETUP ////
 
@@ -51,22 +56,6 @@ app.use(cookieParser());
 // Allows us to access cookies through req.cookies
 app.use(express.static(path.join(__dirname, "public")));
 // Define public folder to serve static assets, imgs, etc..
-
-
-
-//// SESSION ////
-
-app.use(
-  session({
-    store: new MongoStore({ mongooseConnection: mongoose.connection }),
-    // Persist the session in the Database
-    saveUninitialized: true,
-    resave: true,
-    secret: process.env.SESSION_SECRET,
-  })
-);
-
-
 
 //// DEV MODE ////
 
@@ -93,8 +82,6 @@ if (_DEV_MODE) {
       });
   });
 }
-
-
 
 //// ERROR HANDLER ////
 
@@ -139,6 +126,5 @@ app.use((error, req, res, next) => {
   error.status = error.status || 500;
   res.json(error);
 });
-
 
 module.exports = app;
