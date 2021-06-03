@@ -1,19 +1,25 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-  firstName: String,
-  lastName: String,
-  profileImg: {
+const productSchema = new Schema({
+  name: String,
+  productImg: {
     type: String,
     default:
-      "https://vignette.wikia.nocookie.net/simpsons/images/1/14/Ralph_Wiggum.png/revision/latest/top-crop/width/360/height/360?cb=20100704163100",
+      "https://lh3.googleusercontent.com/proxy/R17EXartFlmfSBmHJwyVhWaXg2005HaAvM6yFmk-idRIXDXpp3vY3bouLHhEuXXleTII6By3kDDknXX5VJyB",
   },
-  email: String,
-  password: String,
-  phoneNumber: String,
+  description: String,
+  price: Number,
+  quantity: Number,
+  reference: String,
+  ingredients: [
+    { type: Schema.Types.ObjectId, ref: "Ingredient" },
+  ], 
+  recipe: String,
+  saleByPercentage: Number,
+  saleByValor: Number,
 });
 
-const User = mongoose.model("User", userSchema);
+const ProductModel = mongoose.model("Product", productSchema);
 
-module.exports = User;
+module.exports = ProductModel;

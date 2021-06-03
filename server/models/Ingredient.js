@@ -1,19 +1,16 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-  firstName: String,
-  lastName: String,
-  profileImg: {
+const ingredientSchema = new Schema({
+  name: String,
+  ingredientImg: {
     type: String,
     default:
-      "https://vignette.wikia.nocookie.net/simpsons/images/1/14/Ralph_Wiggum.png/revision/latest/top-crop/width/360/height/360?cb=20100704163100",
+      "https://www.kellyservices.fr/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcTllIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1c88a45561642ecb86e0529f1bce5b049e34fc08/img-placeholder.jpg",
   },
-  email: String,
-  password: String,
-  phoneNumber: String,
+  description : String,
 });
 
-const User = mongoose.model("User", userSchema);
+const IngredientModel = mongoose.model("Ingredient", ingredientSchema);
 
-module.exports = User;
+module.exports = IngredientModel;
