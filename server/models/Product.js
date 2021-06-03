@@ -17,7 +17,7 @@ const productSchema = new Schema({
   ], 
   recipe: String,
   saleByPercentage: Number,
-  saleByValor: Number,
+  saleByValue: Number,
 });
 
 const ProductModel = mongoose.model("Product", productSchema);

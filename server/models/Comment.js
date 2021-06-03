@@ -6,7 +6,7 @@ const commentSchema = new Schema({
   comment: String,
   user: { type: Schema.Types.ObjectId, ref: "User" },
   product: { type: Schema.Types.ObjectId, ref: "Product" },
-});
+},{ timestamps: true });
 
 const CommentModel = mongoose.model("Comment", commentSchema);
 
