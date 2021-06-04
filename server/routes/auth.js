@@ -33,21 +33,22 @@ router.post("/signin", (req, res, next) => {
 
 router.post("/signup", (req, res, next) => {
   const { email, password, firstName, lastName } = req.body;
-
+  
   User.findOne({ email })
-    .then((userDocument) => {
+  .then((userDocument) => {
       if (userDocument) {
-        return res.status(400).json({ message: "Email already taken" });
-      }
-
-      const hashedPassword = bcrypt.hashSync(password, salt);
-      const newUser = { email, lastName, firstName, password: hashedPassword };
-
-      User.create(newUser)
+          return res.status(400).json({ message: "Email already taken" });
+        }
+        
+        const hashedPassword = bcrypt.hashSync(password, salt);
+        const newUser = { email, lastName, firstName, password: hashedPassword };
+        
+        User.create(newUser)
         .then((newUserDocument) => {
-          /* Login on signup */
-          // req.session.currentUser = newUserDocument._id; // <= User = userId
-          res.redirect("/api/auth/isLoggedIn");
+            /* Login on signup */
+            req.session.currentUser = newUserDocument; // <= User = userId delected
+            res.redirect("/api/auth/isLoggedIn");
+            console.log('Ptitchat');
         })
         .catch(next);
     })
