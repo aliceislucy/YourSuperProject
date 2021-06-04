@@ -1,40 +1,73 @@
 require("../config/dbConnection");
-const Pokemon = require("../models/Pokemon");
+const CommentModel = require("../models/Comment");
+const UserModel = require("../models/User");
+const ProductModel = require("../models/Product");
 
-const pokemons = [
+const comments = [
   {
-    name: "Bulbasaur",
-    jname: "フシギダネ",
-    image: "https://ironhack-pokeapi.herokuapp.com/img/001Bulbasaur.png",
-    type: "grass",
+    user: "",
+    product: "",
+    comment:
+      "I am very pleased with this product. I drink it in my morning smoothie, wish it was a little more tasty but it's still great.",
+    rating: 4,
   },
   {
-    name: "Charmander",
-    jname: "ヒトカゲ",
-    image: "https://ironhack-pokeapi.herokuapp.com/img/004Charmander.png",
-    type: "fire",
+    user: "",
+    product: "",
+    comment: "This is my favorite !",
+    rating: 5,
   },
   {
-    name: "Squirtle",
-    jname: "ゼニガメ",
-    image: "https://ironhack-pokeapi.herokuapp.com/img/007Squirtle.png",
-    type: "water",
+    user: "",
+    product: "",
+    comment: "It's not very good... Better next time !",
+    rating: 3,
   },
   {
-    name: "Pikachu",
-    jname: "ピカチュウ",
-    image: "https://ironhack-pokeapi.herokuapp.com/img/025Pikachu.png",
-    type: "electricity",
+    user: "",
+    product: "",
+    comment: "Yummy!",
+    rating: 5,
+  },
+  {
+    user: "",
+    product: "",
+    comment: "I feel so much better thanks to this product! Thank you !",
+    rating: 5,
   },
 ];
 
-async function seed() {
-  try {
-    const createdPokemons = await Pokemon.create(pokemons);
-    console.log(createdPokemons);
-  } catch (error) {
-    console.log(error);
-  }
-}
+UserModel.find()
+  .then((userDocuments) => {
+    comments.forEach((comment) => {
+      const randomIndex = Math.floor(
+        Math.random() * (userDocuments.length - 1 - 0 + 1) + 0
+      );
+      comment.user = userDocuments[randomIndex]._id;
+    });
+    ProductModel.find()
+      .then((productDocuments) => {
+        comments.forEach((comment) => {
+          const randomIndex = Math.floor(
+            Math.random() * (productDocuments.length - 1 - 0 + 1) + 0
+          );
+          comment.product = productDocuments[randomIndex]._id;
+        });
 
-seed();
+        CommentModel.deleteMany()
+          .then(() => CommentModel.create(comments))
+          .then((documents) => {
+            console.log("THE COMMENT SEEDS HAVE BEEN PLANTED 🌱");
+            console.log(documents);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
