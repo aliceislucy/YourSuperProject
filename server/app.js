@@ -86,13 +86,11 @@ if (_DEV_MODE) {
 
 //// ROUTERS ////
 
-//app.use("/api/auth", require("./routes/auth"));
-// app.use("/api/users", require("./routes/users"));
-// app.use("/api/products", require("./routes/products"));
-// app.use("/api/carts", require("./routes/carts"));
-// app.use("/api/orders", require("./routes/orders"));
-// app.use("/api/ingredients", require("./routes/ingredients"));
-// app.use("/api/comments", require("./routes/comments"));
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/cart", require("./routes/cart"));
+// app.use("/api/order", require("./routes/order"));
+// app.use("/api/product", require("./routes/product"));
+// app.use("/api/user", require("./routes/user"));
 
 
 
