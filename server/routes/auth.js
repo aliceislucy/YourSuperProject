@@ -48,7 +48,7 @@ router.post("/signup", (req, res, next) => {
             /* Login on signup */
             req.session.currentUser = newUserDocument; // <= User = userId delected
             res.redirect("/api/auth/isLoggedIn");
-            console.log('Ptitchat');
+            //console.log('Ptitchat');
         })
         .catch(next);
     })
