@@ -1,40 +1,27 @@
 require("../config/dbConnection");
-const Pokemon = require("../models/Pokemon");
+const CartModel = require("../models/Cart");
+const UserModel = require("../models/User");
+const ProductModel = require("../models/Product");
 
-const pokemons = [
+const products = [
   {
-    name: "Bulbasaur",
-    jname: "フシギダネ",
-    image: "https://ironhack-pokeapi.herokuapp.com/img/001Bulbasaur.png",
-    type: "grass",
+    user: "",
+    products: [],
+    price: 0,
   },
   {
-    name: "Charmander",
-    jname: "ヒトカゲ",
-    image: "https://ironhack-pokeapi.herokuapp.com/img/004Charmander.png",
-    type: "fire",
-  },
-  {
-    name: "Squirtle",
-    jname: "ゼニガメ",
-    image: "https://ironhack-pokeapi.herokuapp.com/img/007Squirtle.png",
-    type: "water",
-  },
-  {
-    name: "Pikachu",
-    jname: "ピカチュウ",
-    image: "https://ironhack-pokeapi.herokuapp.com/img/025Pikachu.png",
-    type: "electricity",
+    user: "",
+    products: [],
+    price: 0,
   },
 ];
 
-async function seed() {
-  try {
-    const createdPokemons = await Pokemon.create(pokemons);
-    console.log(createdPokemons);
-  } catch (error) {
+CartModel.deleteMany()
+  .then(() => CartModel.create(carts))
+  .then((documents) => {
+    console.log("THE CART SEEDS HAVE BEEN PLANTED 🌱");
+    console.log(documents);
+  })
+  .catch((error) => {
     console.log(error);
-  }
-}
-
-seed();
+  });
