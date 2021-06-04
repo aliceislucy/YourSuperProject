@@ -15,7 +15,6 @@ const productSchema = new Schema({
   ingredients: [
     { type: Schema.Types.ObjectId, ref: "Ingredient" },
   ], 
-  recipe: String,
   saleByPercentage: Number,
   saleByValue: Number,
 });

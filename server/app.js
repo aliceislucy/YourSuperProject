@@ -1,26 +1,16 @@
 require("dotenv").config();
 require("./config/dbConnection");
-const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
 const session = require("express-session");
-const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo");
 const app = express();
 const _DEV_MODE = false;
 
-//// ROUTERS ////
 
-//app.use("/api/auth", require("./routes/auth"));
-// app.use("/api/users", require("./routes/users"));
-// app.use("/api/products", require("./routes/products"));
-// app.use("/api/carts", require("./routes/carts"));
-// app.use("/api/orders", require("./routes/orders"));
-// app.use("/api/ingredients", require("./routes/ingredients"));
-// app.use("/api/comments", require("./routes/comments"));
 
 //// CORS SETUP ////
 
@@ -33,16 +23,23 @@ app.use(
   })
 );
 
+
+
 //// SESSION ////
 
 app.use(
   session({
-    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }),
+    store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI }), // Persist session in database.
     secret: process.env.SESSION_SECRET,
+    cookie: {
+      maxAge: 24 * 60 * 60 * 1000,
+    },
     resave: true,
     saveUninitialized: true,
   })
 );
+
+
 
 //// GENERAL SETUP ////
 
@@ -57,6 +54,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 // Define public folder to serve static assets, imgs, etc..
 
+
+
 //// DEV MODE ////
 
 // This is to allow the dev to be logged in automtically to test the features
@@ -66,7 +65,7 @@ if (_DEV_MODE) {
   const User = require("./models/User");
 
   app.use((req, res, next) => {
-    User.findOne({})
+    User.findOne()
       // ^ Get a user from the DB (doesnt matter which)
       .then((userDocument) => {
         req.session.currentUser = userDocument._id;
@@ -83,26 +82,21 @@ if (_DEV_MODE) {
   });
 }
 
+
+
+//// ROUTERS ////
+
+//app.use("/api/auth", require("./routes/auth"));
+// app.use("/api/users", require("./routes/users"));
+// app.use("/api/products", require("./routes/products"));
+// app.use("/api/carts", require("./routes/carts"));
+// app.use("/api/orders", require("./routes/orders"));
+// app.use("/api/ingredients", require("./routes/ingredients"));
+// app.use("/api/comments", require("./routes/comments"));
+
+
+
 //// ERROR HANDLER ////
-
-//AUTO SETUP EXPRESS
-
-app.use(function (err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get("env") === "development" ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render("error");
-});
-
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
-//--------------------------------------------------------------------
-// FRANCK
 
 // Middleware that handles a ressource that wasn't found.
 app.use((req, res, next) => {
@@ -121,10 +115,24 @@ if (process.env.NODE_ENV === "production") {
 // Middleware that handles errors, as soon as you pass some data to your next() function
 // eg: next("toto"). You will end up in this middleware function.
 
-app.use((error, req, res, next) => {
-  console.log(error);
-  error.status = error.status || 500;
-  res.json(error);
+app.use((err, req, res, next) => {
+  if (process.env.NODE_ENV !== "production") {
+    console.error(err);
+  }
+  console.log("An error occured");
+  res.status(err.status || 500);
+  if (!res.headersSent) {
+    // A limited amount of information sent in production
+    if (process.env.NODE_ENV === "production") {
+      res.json(err);
+    } else {
+      res.json(
+        JSON.parse(JSON.stringify(err, Object.getOwnPropertyNames(err)))
+      );
+    }
+  }
 });
+
+
 
 module.exports = app;
