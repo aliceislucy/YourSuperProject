@@ -33,18 +33,14 @@ UserModel.find()
     }
     ProductModel.find()
       .then((productDocuments) => {
-        carts.forEach((cart) => {
-          const randomIndex = Math.floor(
-            Math.random() * (productDocuments.length - 1 - 0 + 1) + 0
-          );
-          cart.products.push(
-            productDocuments[randomIndex]._id,
-            productDocuments[randomIndex]._id,
-            productDocuments[randomIndex]._id,
-            productDocuments[randomIndex]._id,
-            productDocuments[randomIndex]._id
-          );
-        });
+        for (let i = 0; i < 6; i++) {
+          carts.forEach((cart) => {
+            const randomIndex = Math.floor(
+              Math.random() * (productDocuments.length - 1 - 0 + 1) + 0
+            );
+            cart.products.push(productDocuments[randomIndex]._id);
+          });
+        }
         CartModel.deleteMany()
           .then(() => CartModel.create(carts))
           .then((documents) => {

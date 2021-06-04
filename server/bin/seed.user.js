@@ -3,13 +3,13 @@ const UserModel = require("../models/User");
 const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
 const bcrypt = require("bcrypt");
-const salt = 2021;
+const salt = 10;
 
 const users = [
   {
     firstName: "Pol",
     lastName: "Seznec",
-    profileImg: "./../public/images/seed-pp_pol.png",
+    profileImg: "./../public/images/users_img/seed-pp_pol.png",
     email: "pol@y",
     password: bcrypt.hashSync("000", salt),
     address: "5 rue des Paquerettes, 74236 Charleville-Mézières",
@@ -20,7 +20,7 @@ const users = [
   {
     firstName: "Alice",
     lastName: "Lefevre",
-    profileImg: "./../public/images/seed-pp_alice.png",
+    profileImg: "./../public/images/users_img/seed-pp_alice.png",
     email: "alice@y",
     password: bcrypt.hashSync("000", salt),
     address: "25 rue des lapins, 45978 Bobine-les-Bois",
@@ -31,7 +31,7 @@ const users = [
   {
     firstName: "Angela",
     lastName: "Thomas",
-    profileImg: "./../public/images/seed-pp_client1.jpg",
+    profileImg: "./../public/images/users_img/seed-pp_client1.jpg",
     email: "",
     password: bcrypt.hashSync("000", salt),
     address: "2 avenue du Carrefour, 49006 Nantes",
@@ -42,7 +42,7 @@ const users = [
   {
     firstName: "Josseline",
     lastName: "Dupuis",
-    profileImg: "./../public/images/seed-pp_client2.jpg",
+    profileImg: "./../public/images/users_img/seed-pp_client2.png",
     email: "b@b",
     password: bcrypt.hashSync("000", salt),
     address: "54 impasse Berlioz, 83720 Saint Raphaël",

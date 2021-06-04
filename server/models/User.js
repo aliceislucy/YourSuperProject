@@ -16,8 +16,8 @@ const userSchema = new Schema({
   password: String,
   address: String,
   stripeId: String,
-  isAdmin: boolean,
-  isMember: boolean,
+  isAdmin: Boolean,
+  isMember: Boolean,
 });
 
 const UserModel = mongoose.model("User", userSchema);
