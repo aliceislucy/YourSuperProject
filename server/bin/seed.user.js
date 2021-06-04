@@ -1,7 +1,7 @@
-require("../config/dbConnection");
-const UserModel = require("../models/User");
 const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
+require("../config/dbConnection");
+const UserModel = require("../models/User");
 const bcrypt = require("bcrypt");
 const salt = 10;
 

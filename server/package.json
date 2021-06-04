@@ -6,11 +6,10 @@
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
     "seeduser": "node ./bin/seed.user.js",
-    "seedproduct": "node ./bin/seed.product.js",
-    "seedcart": "node ./bin/seed.cart.js",
-    "seedorder": "node ./bin/seed.order.js",
     "seedingredient": "node ./bin/seed.ingredient.js",
-    "seedcomment": "node ./bin/seed.comment.js"
+    "seedproduct": "node ./bin/seed.product.js",
+    "seedcomment": "node ./bin/seed.comment.js",
+    "seedcart": "node ./bin/seed.cart.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
