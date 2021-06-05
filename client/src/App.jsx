@@ -3,6 +3,8 @@ import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home"
 import NavBar from './components/NavBar'
 import Footer from "./components/Footer"
+import Subscribe from "./pages/Subscribe"
+
 
 
 function App() {
@@ -11,6 +13,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path='/subscribe' conponent={Subscribe} />
       </Switch>
       <Footer />
     </div>
