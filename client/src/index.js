@@ -1,15 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import "./index.css";
+import AuthProvider from "./Auth/AuthProvider";
 import App from "./App";
+import "./index.css";
+
 // import reportWebVitals from "./reportWebVitals"; <= what it is ?
 
 ReactDOM.render(
   <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <AuthProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </AuthProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );
