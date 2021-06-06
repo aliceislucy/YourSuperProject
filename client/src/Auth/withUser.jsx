@@ -31,3 +31,5 @@ export const withUser = (ComponentToPassUserContextTo) => {
     );
   };
 };
+
+export default withUser;
