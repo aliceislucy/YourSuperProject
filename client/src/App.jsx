@@ -13,7 +13,7 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path='/subscribe' conponent={Subscribe} />
+        <Route exact path='/subscribe' component={Subscribe} />
       </Switch>
       <Footer />
     </div>
