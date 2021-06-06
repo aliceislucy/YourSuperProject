@@ -7,30 +7,32 @@ import apiHandler from "./../apiHandler";
 
 export const AuthContext = React.createContext();
 
+
 class AuthProvider extends Component {
   state = {
     user: null,
     isLoggedIn: false,
     isLoading: true,
   };
-
+  
   componentDidMount() {
     apiHandler
-      .isLoggedIn()
-      .then((data) => {
-        this.setState({ user: data, isLoggedIn: true, isLoading: false });
-      })
-      .catch((error) => {
-        console.log(error);
-        this.setState({ user: null, isLoggedIn: false, isLoading: false });
-      });
+    .isLoggedIn()
+    .then((data) => {
+      this.setState({ user: data, isLoggedIn: true, isLoading: false });
+    })
+    .catch((error) => {
+      console.log(error);
+      this.setState({ user: null, isLoggedIn: false, isLoading: false });
+    });
   }
-
+  
   setUser = (user) => {
     this.setState({ user, isLoggedIn: true });
   };
-
+  
   removeUser = () => {
+    //console.log("ptit chat");
     this.setState({ user: null, isLoggedIn: false });
   };
 
