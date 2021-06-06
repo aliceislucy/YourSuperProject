@@ -11,8 +11,17 @@ export const NavBar = () => {
       </NavLink>
       <ul className="nav-list">
         <li>
+          <NavLink exact to="/productslist">Products</NavLink>
+        </li>
+        <li>
           <NavLink exact to="/subscribe">Subscribe</NavLink>
         </li>
+      </ul>
+
+      <ul>
+          <li>
+              <NavLink exact to ="/cart">Cart</NavLink>
+          </li>
       </ul>
       <hr />
     </div>
