@@ -5,6 +5,7 @@ import NavBar from './components/NavBar'
 import Footer from "./components/Footer"
 import Subscribe from "./pages/Subscribe"
 import ProductsList from "./pages/ProductList"
+import OneProduct from "./pages/OneProduct"
 import Cart from "./pages/Cart"
 
 
@@ -18,7 +19,7 @@ function App() {
         <Route exact path='/products' component={ProductsList} />
         <Route exact path='/subscribe' component={Subscribe} />
         <Route exact path='/cart' component={Cart} />
-        <Route exact path="/product" component={OneGuitar} />
+        <Route exact path="/product" component={OneProduct} />
       </Switch>
       <Footer />
     </div>
