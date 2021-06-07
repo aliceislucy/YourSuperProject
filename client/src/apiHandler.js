@@ -13,7 +13,7 @@ function errorHandler(error) {
   throw error;
 }
 
-export default {
+const apiHandler = {
   service,
 
   signup(userInfo) {
@@ -29,15 +29,15 @@ export default {
       .then((res) => res.data)
       .catch(errorHandler);
   },
-
+  isLoggedIn() {
+    return service
+    .get("/auth/isLoggedIn")
+    .then((res) => res.data)
+    .catch(errorHandler);
+  },
   logout() {
     return service.delete("/auth/logout").catch(errorHandler);
   },
-
-  isLoggedIn() {
-    return service
-      .get("/auth/isLoggedIn")
-      .then((res) => res.data)
-      .catch(errorHandler);
-  }
 };
+
+export default apiHandler;

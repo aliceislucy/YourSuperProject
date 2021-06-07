@@ -7,6 +7,9 @@ import Subscribe from "./pages/Subscribe"
 import ProductsList from "./pages/ProductList"
 import OneProduct from "./pages/OneProduct"
 import Cart from "./pages/Cart"
+import Profile from "./pages/Profile"
+import Connection from "./pages/Connection"
+import Press from "./pages/Press"
 
 
 
@@ -16,10 +19,13 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path='/products' component={ProductsList} />
         <Route exact path='/subscribe' component={Subscribe} />
-        <Route exact path='/cart' component={Cart} />
+        <Route exact path='/products' component={ProductsList} />
         <Route exact path="/products/:id" component={OneProduct} />
+        <Route exact path='/cart' component={Cart} />
+        <Route exact path='/profile' component={Profile} />
+        <Route exact path='/connection' component={Connection} />        
+        <Route exact path='/press' component={Press} />        
       </Switch>
       <Footer />
     </div>
