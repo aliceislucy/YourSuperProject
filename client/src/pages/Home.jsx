@@ -1,13 +1,13 @@
 import React from "react";
-import Home_Section1 from "./../components/Home_Section1"
-import Home_Section2 from "./../components/Home_Section2"
+import HomeSection1 from "./../components/HomeSection1"
+import HomeSection2 from "./../components/HomeSection2"
 
 class Home extends React.Component {
   render() {
     return (
       <div>
-        <Home_Section1 />
-        <Home_Section2 />
+        <HomeSection1 />
+        <HomeSection2 />
       </div>
     );
   }
