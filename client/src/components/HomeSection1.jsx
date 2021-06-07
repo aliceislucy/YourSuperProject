@@ -4,7 +4,7 @@ export const HomeSection1 = () => {
   return (
     <>
       <section>
-        <div>HomeSection1 (component)</div>
+        <div>HomeSection1</div>
       </section>
     </>
   );

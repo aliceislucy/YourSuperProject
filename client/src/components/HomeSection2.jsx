@@ -5,7 +5,7 @@ export const HomeSection2 = () => {
     <>
       <section>
         <hr />
-        <div>HomeSection2 (component)</div>
+        <div>HomeSection2</div>
         <ProductCast />
       </section>
     </>
