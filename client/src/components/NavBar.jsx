@@ -11,7 +11,7 @@ export const NavBar = () => {
       </NavLink>
       <ul className="nav-list">
         <li>
-          <NavLink exact to="/productslist">Products</NavLink>
+          <NavLink exact to="/products">Products</NavLink>
         </li>
         <li>
           <NavLink exact to="/subscribe">Subscribe</NavLink>

@@ -15,9 +15,10 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path='/productslist' component={ProductsList} />
+        <Route exact path='/products' component={ProductsList} />
         <Route exact path='/subscribe' component={Subscribe} />
         <Route exact path='/cart' component={Cart} />
+        <Route exact path="/product" component={OneGuitar} />
       </Switch>
       <Footer />
     </div>

@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const Product = require("./../models/Product");
 
-
 ////  ----- ROUTE PREFIX === /api/product ----- ////
 
 // Get every product inside the database
@@ -17,11 +16,11 @@ router.get("/", (req, res, next) => {
     });
 });
 
-
 // Get a product by ID (when you click on it to get the details)
 
 router.get("/:id", (req, res, next) => {
   Product.findById(req.params.id)
+    .populate("ingredients")
     .then((product) => {
       res.status(200).json(product);
     })
@@ -30,14 +29,29 @@ router.get("/:id", (req, res, next) => {
     });
 });
 
-
 // Create a new product
 
 router.post("/", (req, res, next) => {
+  const {
+    name,
+    productImg,
+    description,
+    price,
+    quantity,
+    reference,
+    ingredients,
+    saleByPercentage,
+    saleByValue,
+  } = req.body;
 
-  const { name, productImg, description, price, quantity, reference, ingredients, saleByPercentage, saleByValue } = req.body;
-
-  if (!name || !productImg || !description || !price || !quantity || !ingredients) {
+  if (
+    !name ||
+    !productImg ||
+    !description ||
+    !price ||
+    !quantity ||
+    !ingredients
+  ) {
     return res.status(400).json({ message: "No empty fields please !" });
   }
 
@@ -50,7 +64,7 @@ router.post("/", (req, res, next) => {
     reference,
     ingredients,
     saleByPercentage,
-    saleByValue
+    saleByValue,
   };
 
   Product.create(newProduct)
@@ -61,7 +75,6 @@ router.post("/", (req, res, next) => {
       res.status(500).json(error);
     });
 });
-
 
 //  Update a product (has to be by id to target a certain product)
 
@@ -74,7 +87,6 @@ router.patch("/:id", (req, res, next) => {
       res.status(500).json(error);
     });
 });
-
 
 //  Delete a product (has to be by id, of cuuurse)
 
