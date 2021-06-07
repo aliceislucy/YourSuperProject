@@ -29,35 +29,35 @@ const apiHandler = {
 
   signup(userInfo) {
     return service
-      .post("/api/auth/signup", userInfo)
+      .post("/auth/signup", userInfo)
       .then((res) => res.data)
       .catch(errorHandler);
   },
 
   signin(userInfo) {
     return service
-      .post("/api/auth/signin", userInfo)
+      .post("/auth/signin", userInfo)
       .then((res) => res.data)
       .catch(errorHandler);
   },
 
   isLoggedIn() {
     return service
-      .get("/api/auth/isLoggedIn")
+      .get("/auth/isLoggedIn")
       .then((res) => res.data)
       .catch(errorHandler);
   },
 
   logout() {
     return service
-      .get("/api/auth/logout")
+      .get("/auth/logout")
       .then((res) => res.data)
       .catch(errorHandler);
   },
 
   getItems() {
     return service
-      .get("/api/items")
+      .get("/items")
       .then((res) => res.data)
       .catch(errorHandler);
   },
