@@ -8,16 +8,11 @@ class ProductCast extends React.Component {
     type: "",
   };
 
-  handleChange = (event) => {
-    const value = event.target.value;
-    const key = event.target.name;
-    this.setState({ [key]: value });
-  };
 
   render() {
     return (
       <section>
-        <h2>ProductCard</h2>
+        <h2>{this.props.Product}</h2>
 
         <div>
           <Button1 />
