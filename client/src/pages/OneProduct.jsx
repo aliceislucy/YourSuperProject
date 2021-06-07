@@ -10,6 +10,9 @@ class OneProduct extends Component {
   componentDidMount() {
     const productId = this.props.match.params.id;
 
+    console.log("------------- THIS IS PRODUCT ID ---------");
+    console.log(productId)
+
     axios
       .get("http://localhost:5000/api/yoursuper/" + productId)
 

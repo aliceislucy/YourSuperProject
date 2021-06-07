@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import AuthProvider from "./Auth/AuthProvider";
+import UserProvider from "./Auth/UserProvider";
 import App from "./App";
 import "./index.css";
 
@@ -9,11 +9,11 @@ import "./index.css";
 
 ReactDOM.render(
   <BrowserRouter>
-    <AuthProvider>
+    <UserProvider>
       <React.StrictMode>
         <App />
       </React.StrictMode>
-    </AuthProvider>
+    </UserProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );

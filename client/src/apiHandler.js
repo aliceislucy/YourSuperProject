@@ -13,18 +13,7 @@ function errorHandler(error) {
   throw error;
 }
 
-
-// Functions in  = 'export default'
-// export default {
-//   service,
-
-// };
-
-// sorry je t'ai commenté plus haut car j'ai besoin de tous
-// les apiHandlers ci-dessous pour les sessions (pris de Scoby)
-
-
-const apiHandler = {
+export default {
   service,
 
   signup(userInfo) {
@@ -41,26 +30,14 @@ const apiHandler = {
       .catch(errorHandler);
   },
 
+  logout() {
+    return service.delete("/auth/logout").catch(errorHandler);
+  },
+
   isLoggedIn() {
     return service
       .get("/auth/isLoggedIn")
       .then((res) => res.data)
       .catch(errorHandler);
-  },
-
-  logout() {
-    return service
-      .get("/auth/logout")
-      .then((res) => res.data)
-      .catch(errorHandler);
-  },
-
-  getItems() {
-    return service
-      .get("/items")
-      .then((res) => res.data)
-      .catch(errorHandler);
-  },
+  }
 };
-
-export default apiHandler;
