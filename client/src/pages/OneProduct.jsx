@@ -5,7 +5,6 @@ import IngredientCard from "../components/IngredientCard";
 class OneProduct extends Component {
   state = {
     product: null,
-    ingredients: [],
   };
 
   componentDidMount() {

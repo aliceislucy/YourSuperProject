@@ -19,7 +19,7 @@ function App() {
         <Route exact path='/products' component={ProductsList} />
         <Route exact path='/subscribe' component={Subscribe} />
         <Route exact path='/cart' component={Cart} />
-        <Route exact path="/product" component={OneProduct} />
+        <Route exact path="/products/:id" component={OneProduct} />
       </Switch>
       <Footer />
     </div>
