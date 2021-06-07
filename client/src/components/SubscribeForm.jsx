@@ -35,7 +35,7 @@ class SubscribeForm extends Component {
             id="email"
             name="email"
           />
-          <button>Register</button>
+          <button>Subscribe !</button>
         </form>
       </section>
     );
