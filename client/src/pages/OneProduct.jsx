@@ -14,8 +14,7 @@ class OneProduct extends React.Component {
     console.log(productId)
 
     axios
-      .get("http://localhost:5000/api/yoursuper/" + productId)
-
+      .get("http://localhost:5000/api/product/" + productId)
       .then((res) => {
         this.setState({
           product: res.data,
@@ -27,6 +26,7 @@ class OneProduct extends React.Component {
   }
 
   render() {
+    console.log(this.state.product);
     if (!this.state.product) return null;
 
     return (
