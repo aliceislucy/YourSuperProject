@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 //import { withRouter } from "react-router-dom";
-import apiHandler from "./../apiHandler";
+// import apiHandler from "./../apiHandler";
 
-class SubscribeForm extends Component {
+class SubscribeForm extends React.Component {
   state = {
     email: "",
     isMember: "",

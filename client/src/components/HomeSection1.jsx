@@ -1,6 +1,6 @@
 import React from "react";
 
-export const HomeSection1 = () => {
+const HomeSection1 = () => {
   return (
     <>
       <section>

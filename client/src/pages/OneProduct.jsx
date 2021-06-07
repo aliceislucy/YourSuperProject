@@ -1,8 +1,8 @@
 import axios from "axios";
-import React, { Component } from "react";
+import React from "react";
 import IngredientCard from "../components/IngredientCard";
 
-class OneProduct extends Component {
+class OneProduct extends React.Component {
   state = {
     product: null,
   };

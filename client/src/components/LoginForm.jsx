@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import withUser from "./../Auth/withUser";
 import apiHandler from "./../apiHandler";
 
 
-class LoginForm extends Component {
+class LoginForm extends React.Component {
   state = {
     email: "",
     password: "",

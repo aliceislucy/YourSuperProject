@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import Button1 from "./Button1";
 //import { withRouter } from "react-router-dom";
-import apiHandler from "./../apiHandler";
+// import apiHandler from "./../apiHandler";
 
-class ProductCast extends Component {
+class ProductCast extends React.Component {
   state = {
     type: "",
   };
