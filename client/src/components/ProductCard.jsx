@@ -1,18 +1,17 @@
 import React from "react";
-import ButtonAddCart from "./ButtonAddCart";
+import { Link } from "react-router-dom";
 
-function ProductCast({ productImg, name, productId, quantity }) {
-  //console.log(productId)
+function ProductCard({ productImg, name, productId, quantity, handleSubmit }) {
 
     return (
       <div className="IngredientCard">
-        <a href={`http://localhost:6001/products/${productId}`}>
+        <Link to={`/products/${productId}`}>
           <img src={productImg} alt={name} />
           <p>{name}</p>
-          {quantity ? <ButtonAddCart /> : <p>Sold Out</p>}
-        </a>
+        </Link>
+          {quantity ? <button name={productId} onClick={() =>handleSubmit(productId)}>Add to cart</button> : <p>Sold Out</p>}
       </div>
     );
 }
 
-export default ProductCast;
+export default ProductCard;

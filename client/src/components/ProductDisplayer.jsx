@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 
 class ProductDisplayer extends React.Component {
   state = {
-    product: [],
+    products: [],
   };
 
   componentDidMount() {
@@ -21,6 +21,14 @@ class ProductDisplayer extends React.Component {
       });
   }
 
+  handleSubmit = (id) => {
+    
+  
+    let addProduct = { quantity : 1, product :  id}
+  
+    axios.post("http://localhost:5000/api/cart/", addProduct, {withCredentials: true})
+  };
+
   render() {
     if (!this.state.products) return null;
 
@@ -34,6 +42,7 @@ class ProductDisplayer extends React.Component {
               productImg={product.productImg}
               quantity={product.quantity}
               productId={product._id}
+              handleSubmit={this.handleSubmit}
             />
           );
         })}
