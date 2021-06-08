@@ -6,7 +6,6 @@ class OneProduct extends React.Component {
   state = {
     product: null,
     quantity: 1,
-    
   };
 
   componentDidMount() {
@@ -36,29 +35,17 @@ class OneProduct extends React.Component {
     });
   };
 
-  calculateTotal = () => {
-    let total = this.state.quantity * this.state.product.price
-    this.setState({
-       total: total.toFixed(2) + " €",
-    });
-  }
-
   handleSubmit = (event) => {
     event.preventDefault();
 
+    let addProduct = { quantity : this.state.quantity, product : this.state.product._id }
 
-    console.log(this.state.product)
-
-
-    axios.post("")
-    
-
-
+    axios.post("http://localhost:5000/api/cart/", addProduct, {withCredentials: true})
   };
 
   render() {
-    if (!this.state.product) return null;
 
+    if (!this.state.product) return null;
     return (
       <div className="OneProduct">
         <div className="OneProduct-container">
@@ -93,9 +80,9 @@ class OneProduct extends React.Component {
               onChange={this.handleChange}
             />
             <div>
-            {this.state.total}
+            {(this.state.quantity * this.state.product.price).toFixed(2)} €
             </div>
-            <button >Add to cart</button>
+            <button onClick={this.handleSubmit}>Add to cart</button>
           </form>
         </div>
       </div>
