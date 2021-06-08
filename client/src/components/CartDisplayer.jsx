@@ -8,12 +8,12 @@ class CartDisplayer extends React.Component {
   };
 
   componentDidMount() {
-    const cartId = this.props.match.params.id;
+   
 
     axios
       .get("http://localhost:5000/api/cart/", {withCredentials: true})
       .then((res) => {
-         console.log(res);
+        //console.log(res);
         this.setState({
           cart: res.data,
         });

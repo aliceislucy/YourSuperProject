@@ -5,16 +5,13 @@ const Cart = require("../models/Cart");
 
 /// ROUTE BEGINS WITH : /api/cart ///
 
-router.get("/:id", (req, res, next) => {
-    //if user is not logged in : add a key "cart" to the cookie
-    //if user is logged in : add to session
-    console.log('ptit chat')
-    console.log(req.params)
-
-    Cart.findOne(req.params.id)
-    .populate("user")
-    .populate("products")
+router.get("/", (req, res, next) => {
+    Cart.findOne({user: req.session.currentUser.id})
+    .populate("products.product")
     .then((cart) => {
+      
+      console.log('cart');
+      console.log(cart);
       res.status(200).json(cart);
       })
       .catch((error) => {

@@ -23,7 +23,7 @@ function App() {
         <Route exact path='/subscribe' component={Subscribe} />
         <Route exact path='/products' component={ProductsList} />
         <Route exact path="/products/:id" component={OneProduct} />
-        <Route exact path='/cart/:user' component={Cart} />
+        <Route exact path='/cart' component={Cart} />
         {/* "Profile" Shoud be a ProtecRoute */}
         <Route exact path='/profile' component={Profile} /> 
         <Route exact path='/connection' component={Connection} />        

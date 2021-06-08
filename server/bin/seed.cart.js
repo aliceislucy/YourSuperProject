@@ -4,30 +4,12 @@ require("../config/dbConnection");
 const CartModel = require("../models/Cart");
 const UserModel = require("../models/User");
 const ProductModel = require("../models/Product");
-
 const carts = [
   {
-    user: "",
-    products: [],
-    price: 0,
-  },
-  {
-    user: "",
-    products: [],
-    price: 0,
-  },
-  {
-    user: "",
-    products: [],
-    price: 0,
-  },
-  {
-    user: "",
-    products: [],
-    price: 0,
+    user: "60bf1a6340a4c2a72a1b9fe1",
+    products: [{quantity: 3, product : '60bf34f69fc5c4b7382174c5'},{quantity: 2, product : '60bf34f69fc5c4b7382174c9'}],
   },
 ];
-
 UserModel.find()
   .then((userDocuments) => {
     for (let i = 0; i < carts.length; i++) {
