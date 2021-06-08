@@ -1,5 +1,5 @@
 import React from "react";
-import Button1 from "./Button1";
+import ButtonAddCart from "./ButtonAddCart";
 import axios from "axios";
 
 
@@ -31,7 +31,7 @@ class ProductCast extends React.Component {
               <a href="http://localhost:6001/products/">
                 <img src={product.productImg} alt={product.name} />
                 <span>{product.name}</span>
-                <Button1 />
+                <ButtonAddCart />
               </a>
             );
           })}

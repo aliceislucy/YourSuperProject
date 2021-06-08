@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Button1 = () => {
+const ButtonAddCart = () => {
   return (
     <>
      <button>Add To Card !</button>
@@ -9,4 +9,4 @@ const Button1 = () => {
   );
 };
 
-export default Button1;
+export default ButtonAddCart;
