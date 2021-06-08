@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCast from "./ProductCard"
+import ProductDisplayer from "./ProductDisplayer"
 
 const HomeSection2 = () => {
   return (
@@ -7,7 +7,7 @@ const HomeSection2 = () => {
       <section>
         <hr />
         <div>HomeSection2</div>
-        <ProductCast />
+        <ProductDisplayer />
       </section>
     </>
   );

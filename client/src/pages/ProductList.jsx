@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCast from "../components/ProductCard"
+import ProductDisplayer from "../components/ProductDisplayer"
 
 class ProducList extends React.Component {
   render() {
@@ -7,7 +7,7 @@ class ProducList extends React.Component {
       <div>
         <hr />
         <h2>ProducList Page</h2>
-        <ProductCast />
+        <ProductDisplayer />
       </div>
     );
   }

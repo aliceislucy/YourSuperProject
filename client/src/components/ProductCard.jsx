@@ -1,44 +1,18 @@
 import React from "react";
 import ButtonAddCart from "./ButtonAddCart";
-import axios from "axios";
 
+function ProductCast({ productImg, name, productId, quantity }) {
+  console.log(productId)
 
-class ProductCast extends React.Component {
-  state = {
-    products: [],}
-
-  componentDidMount() {
-    axios
-      .get("http://localhost:5000/api/product/")
-      .then((res) => {
-       // console.log(res);
-        this.setState({
-          products : res.data,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
-
-  render() {
-    
     return (
-      <section>
-        <div>
-          {this.state.products.map((product) => {
-            return (
-              <a href="http://localhost:6001/products/">
-                <img src={product.productImg} alt={product.name} />
-                <span>{product.name}</span>
-                <ButtonAddCart />
-              </a>
-            );
-          })}
-        </div>
-      </section>
+      <div className="IngredientCard">
+        <a href={`http://localhost:6001/products/${productId}`}>
+          <img src={productImg} alt={name} />
+          <p>{name}</p>
+          {quantity ? <ButtonAddCart /> : <p>Sold Out</p>}
+        </a>
+      </div>
     );
-  }
 }
 
 export default ProductCast;

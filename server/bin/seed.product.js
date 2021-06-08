@@ -23,7 +23,7 @@ const products = [
     description:
       "Hormones influence your mood, quality of sleep, ability to focus, skin & hair health, weight, and cognitive function. This blend combines 6 powerful superfood ingredients that have been traditionally used in Ayurvedic medicine.",
     price: 27.9,
-    quantity: 8569,
+    quantity: 0,
     reference: "PROD02",
     ingredients: [],
     saleByPercentage: 0,
