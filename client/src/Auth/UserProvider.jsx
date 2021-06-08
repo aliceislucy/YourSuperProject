@@ -14,8 +14,10 @@ class UserProvider extends React.Component {
     apiHandler
       .isLoggedIn()
       .then((data) => {
+     
         this.setState({ user: data, isLoggedIn: true, isLoading: false });
       })
+
       .catch((error) => {
         this.setState({ isLoggedIn: false, isLoading: false });
       });

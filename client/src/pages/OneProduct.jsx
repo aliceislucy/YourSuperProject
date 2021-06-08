@@ -6,6 +6,7 @@ class OneProduct extends React.Component {
   state = {
     product: null,
     quantity: 1,
+    
   };
 
   componentDidMount() {
@@ -24,17 +25,34 @@ class OneProduct extends React.Component {
   }
 
   handleChange = (event) => {
-    console.log("----------event.target !!!!-----------");
-    console.log(event.target);
-    const { name, value } = event.target;
+    let { name, value } = event.target;
+
+    if (value < 1) {
+      value = 1
+    }
 
     this.setState({
       [name]: value,
     });
   };
 
+  calculateTotal = () => {
+    let total = this.state.quantity * this.state.product.price
+    this.setState({
+       total: total.toFixed(2) + " €",
+    });
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
+
+
+    console.log(this.state.product)
+
+
+    axios.post("")
+    
+
 
   };
 
@@ -75,9 +93,9 @@ class OneProduct extends React.Component {
               onChange={this.handleChange}
             />
             <div>
-              {this.state.quantity * this.state.product.price.toFixed()} €
+            {this.state.total}
             </div>
-            <button>Add to cart</button>
+            <button >Add to cart</button>
           </form>
         </div>
       </div>
