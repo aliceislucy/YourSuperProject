@@ -4,7 +4,7 @@ import React from "react";
 const Button1 = () => {
   return (
     <>
-     <button>Button1</button>
+     <button>Add To Card !</button>
     </>
   );
 };

@@ -94,6 +94,7 @@ app.use("/api/user", require("./routes/user"));
 
 
 
+
 //// ERROR HANDLER ////
 
 // Middleware that handles a ressource that wasn't found.
