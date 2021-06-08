@@ -2,7 +2,7 @@ import React from "react";
 import ButtonAddCart from "./ButtonAddCart";
 
 function ProductCast({ productImg, name, productId, quantity }) {
-  console.log(productId)
+  //console.log(productId)
 
     return (
       <div className="IngredientCard">

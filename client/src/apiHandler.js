@@ -31,9 +31,9 @@ const apiHandler = {
   },
   isLoggedIn() {
     return service
-    .get("/auth/isLoggedIn")
-    .then((res) => res.data)
-    .catch(errorHandler);
+      .get("/auth/isLoggedIn")
+      .then((res) => res.data)
+      .catch(errorHandler);
   },
   logout() {
     return service.delete("/auth/logout").catch(errorHandler);

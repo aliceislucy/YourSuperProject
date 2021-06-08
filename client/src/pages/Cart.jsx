@@ -1,13 +1,15 @@
 import React from "react";
 import withUser from "../Auth/withUser";
 import CartDisplayer from "../components/CartDisplayer";
+import SumCart from "../components/SumCart";
 
 class Cart extends React.Component {
   render() {
     return (
       <div>
-        <h2>Cart :</h2>
+        <h2>Cart</h2>
         <CartDisplayer />
+        <SumCart />
       </div>
     );
   }

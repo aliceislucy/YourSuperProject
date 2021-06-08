@@ -1,14 +1,37 @@
 import React from "react";
 import CartDisplayerProduct from "./CartDisplayerProduct";
-import SumCart from "./SumCart";
+import axios from "axios";
 
-const CartDisplayer = () => {
-  return (
-    <div>
-      <CartDisplayerProduct />
-      <SumCart />
-    </div>
-  );
-};
+class CartDisplayer extends React.Component {
+  state = {
+    cart: [],
+  };
+
+  componentDidMount() {
+    const cartId = this.props.match.params.id;
+
+    axios
+      .get("http://localhost:5000/api/cart/", {withCredentials: true})
+      .then((res) => {
+         console.log(res);
+        this.setState({
+          cart: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  render() {
+
+
+    return (
+      <div>
+     
+      </div>
+    );
+  }
+}
 
 export default CartDisplayer;
