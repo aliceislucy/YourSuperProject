@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Product = require("./../models/Product");
-
+const Ingredient = require("./../models/Ingredient")
 ////  ----- ROUTE PREFIX === /api/product ----- ////
 
 // Get every product inside the database
@@ -20,11 +20,12 @@ router.get("/", (req, res, next) => {
 
 router.get("/:id", (req, res, next) => {
   Product.findById(req.params.id)
-    .populate("ingredients")
-    .then((product) => {
-      res.status(200).json(product);
+  .populate("ingredients")
+  .then((product) => {
+    res.status(200).json(product);
     })
     .catch((error) => {
+      console.log(error);
       res.status(500).json(error);
     });
 });
