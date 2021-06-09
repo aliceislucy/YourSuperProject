@@ -8,10 +8,8 @@ class CartDisplayer extends React.Component {
   };
 
   componentDidMount() {
-   
-
     axios
-      .get("http://localhost:5000/api/cart/", {withCredentials: true})
+      .get("http://localhost:5000/api/cart/", { withCredentials: true })
       .then((res) => {
         //console.log(res);
         this.setState({
@@ -24,11 +22,13 @@ class CartDisplayer extends React.Component {
   }
 
   render() {
-
-
+    console.log('prout');
+    console.log(this.state.cart);
     return (
       <div>
-     
+        {/* {this.state.cart.map(() => {
+          <CartDisplayerProduct />;
+        })} */}
       </div>
     );
   }

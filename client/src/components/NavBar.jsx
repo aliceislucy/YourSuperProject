@@ -38,6 +38,13 @@ const NavBar = (props) => {
             Subscribe
           </NavLink>
         </li>
+        {/* Admin Link ==============================
+         {context.isAdmin === true(
+        <li>
+          <NavLink exact to="/admin">
+            Admin Page
+          </NavLink>
+        </li>)} */}
 
         {!context.isLoggedIn && (
           <React.Fragment>

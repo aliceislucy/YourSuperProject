@@ -11,6 +11,7 @@ import Profile from "./pages/Profile"
 import Dashboard from "./pages/Dashboard"
 import Connection from "./pages/Connection"
 import Press from "./pages/Press"
+import AdminHome from "./admin/AdminHome"
 //import ProtectedRoute from "./components/ProtectedRoute"
 
 
@@ -29,7 +30,8 @@ function App() {
         <Route exact path='/profile' component={Profile} /> 
         <Route exact path='/dashboard' component={Dashboard} /> 
         <Route exact path='/connection' component={Connection} />        
-        <Route exact path='/press' component={Press} />        
+        <Route exact path='/press' component={Press} />   
+        <Route exact path='/admin' component={AdminHome} />
       </Switch>
       <Footer />
     </div>

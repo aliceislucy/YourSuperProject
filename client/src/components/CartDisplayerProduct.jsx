@@ -1,9 +1,10 @@
 import React from 'react'
 
-const CartDisplayerProduct = () => {
+function CartDisplayerProduct({}) {
     return (
-        <div>
-            CartDisplayerProduct
+        <div className="CardProductCard">
+            <p></p>
+            <p>€ {}</p>
         </div>
     )
 }
