@@ -35,16 +35,8 @@ class SumCart extends React.Component {
     sum = sum.toFixed(2)
     return sum
   }
-
-
-  calculSubTotalWithShipping(){
-
-  }
-
-
-
+  
   render() {
- 
     return (
       <div>
         <hr />
