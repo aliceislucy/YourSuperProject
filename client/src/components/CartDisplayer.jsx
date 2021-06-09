@@ -34,7 +34,7 @@ class CartDisplayer extends React.Component {
     // console.log(this.state.cartProducts);
 
     if (!this.state.cartProducts) return null;
-    console.log(this.state.cartProducts)
+    // console.log(this.state.cartProducts)
     return (
       <div>
         {this.state.cartProducts.map((productSelected) => {
@@ -49,6 +49,7 @@ class CartDisplayer extends React.Component {
               onDelete={this.handleDeleteProduct}
               productPrice={productSelected.product.price}
               quantity={productSelected.quantity}
+              key={productSelected.product._id}
             />
           );
         })}

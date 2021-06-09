@@ -3,6 +3,7 @@ import CartDisplayer from "../components/CartDisplayer";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import OrderHistory from "../components/OrderHistory"
+import SumCart from "../components/SumCart"
 
 class Dashboard extends React.Component {
   state = {
@@ -45,6 +46,7 @@ class Dashboard extends React.Component {
           </div>
 
           <CartDisplayer />
+          <SumCart />
         </div>
       </div>
     );

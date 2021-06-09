@@ -196,3 +196,12 @@ class Profile extends React.Component {
 }
 
 export default withUser(Profile);
+
+// route backend dédiée à update password
+// /api/user
+// get currentUser
+// manip décrypter current password 
+// comparer si match current password input with curent password database
+// si non please enter again
+// si oui :
+// update password with new Password.bcrypt 

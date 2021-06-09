@@ -19,7 +19,7 @@ const NavBar = (props) => {
 
       <ul className="nav-list">
         <li>
-          <NavLink exact to="/press">
+          <NavLink exact to="/press+media">
             Press + Media
           </NavLink>
         </li>

@@ -25,6 +25,7 @@ function App() {
         <Route exact path='/subscribe' component={Subscribe} />
         <Route exact path='/products' component={ProductsList} />
         <Route exact path="/products/:id" component={OneProduct} />
+        <Route exact path="/press+media" component={Press} />
         <ProtectedRoute exact path='/cart' component={Cart} />
         <ProtectedRoute exact path='/profile' component={Profile} /> 
         <ProtectedRoute exact path='/dashboard' component={Dashboard} /> 

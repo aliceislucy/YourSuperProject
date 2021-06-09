@@ -38,8 +38,8 @@ class CartDisplayerProduct extends React.Component {
   //   })
 
   render() {
-    console.log("Product In card");
-    console.log(this.props);
+    // console.log("Product In card");
+    // console.log(this.props);
     return (
       <div className="CardProductCard">
         <img src={this.props.productImg} alt={this.props.productName} />
