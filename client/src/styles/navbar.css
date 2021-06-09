@@ -1,0 +1,27 @@
+* {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+      height: 10vh;
+      width: 100%;
+      background-color: rgb(146, 143, 140);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .nav-list {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      list-style-type: none;
+  }
+
+  #logo {
+      height: 8vh;
+      margin: 0 0.5vh
+  }

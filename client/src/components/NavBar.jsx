@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import withUser from "./../Auth/withUser";
+import "./../styles/navbar.css";
 
 const NavBar = (props) => {
   const { context } = props;
@@ -11,35 +12,41 @@ const NavBar = (props) => {
 
   return (
     <nav>
-      <NavLink exact to="/">
-        <img src="https://cdn.shopify.com/s/files/1/1523/0666/t/194/assets/logo.png?v=83684454748928667" alt="YourSuper Logo" />
-      </NavLink>
+      <div id="logo">
+        <NavLink exact to="/">
+          <img
+            id="logo"
+            src="https://cdn.shopify.com/s/files/1/1523/0666/t/194/assets/logo.png?v=83684454748928667"
+            alt="YourSuper Logo"
+          />
+        </NavLink>
+      </div>
 
       <ul className="nav-list">
         <li>
-          <NavLink exact to="/press+media">
+          <NavLink className="navlink" exact to="/press+media">
             Press + Media
           </NavLink>
         </li>
         <li>
-          <NavLink exact to="/about">
+          <NavLink className="navlink" exact to="/about">
             Our Story
           </NavLink>
         </li>
         <li>
-          <NavLink exact to="/products">
+          <NavLink className="navlink" exact to="/products">
             Products
           </NavLink>
         </li>
         <li>
-          <NavLink exact to="/subscribe">
+          <NavLink className="navlink" exact to="/subscribe">
             Subscribe
           </NavLink>
         </li>
         {/* Admin Link ==============================
          {context.isAdmin === true(
         <li>
-          <NavLink exact to="/admin">
+          <NavLink className="navlink" exact to="/admin">
             Admin Page
           </NavLink>
         </li>)} */}
@@ -47,7 +54,7 @@ const NavBar = (props) => {
         {!context.isLoggedIn && (
           <React.Fragment>
             <li>
-              <NavLink to="/login">Log in or sign up</NavLink>
+              <NavLink className="navlink" to="/login">Log in or sign up</NavLink>
             </li>
           </React.Fragment>
         )}
@@ -55,16 +62,16 @@ const NavBar = (props) => {
         {context.isLoggedIn && (
           <>
             <li>
-              <NavLink to="/dashboard">Dashboard</NavLink>
+              <NavLink className="navlink" to="/dashboard">Dashboard</NavLink>
             </li>
             <li>
-              <NavLink exact to="/cart">
+              <NavLink className="navlink" exact to="/cart">
                 Cart
               </NavLink>
             </li>
 
             <li>
-              <NavLink to="/connection" onClick={handleLogout}>
+              <NavLink className="navlink" to="/connection" onClick={handleLogout}>
                 Logout
               </NavLink>
             </li>
