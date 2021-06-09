@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function ProductCard({ productImg, name, productId, quantity, handleSubmit }) {
 
     return (
-      <div className="ProductCard">
+      <div className="IngredientCard">
         <Link to={`/products/${productId}`}>
           <img src={productImg} alt={name} />
           <p>{name}</p>

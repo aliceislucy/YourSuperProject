@@ -1,32 +1,55 @@
 import React from "react";
+import axios from "axios";
 
 class CartDisplayerProduct extends React.Component {
   state = {
     quantity: this.props.quantity,
+
   };
 
   handleChange = (event) => {
     let { name, value } = event.target;
-
     if (value < 1) {
       value = 1;
     }
-
     this.setState({
       [name]: value,
     });
   };
+  handleDelete = (productId) => {
+      console.log('productId');
+      console.log(productId);
+    axios
+      .delete("http://localhost:5000/api/cart/" + productId, { withCredentials: true })
+      .then(() => {
+        const newProducts = this.state.product.filter(product => product._id !== productId)
+        this.setState({
+          product: newProducts
+        })
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  //   .then((response) => {
+  //     this.setState({
+  //       product: this.state.product.filter((product) => {
+  //         return product._id !== productId;
+  //       }),
+  //     });
+  //   })
 
   render() {
-    console.log("Wesh");
-    console.log(this.props.quantity);
+    console.log("Product In card");
+    console.log(this.props);
     return (
       <div className="CardProductCard">
         <img src={this.props.productImg} alt={this.props.productName} />
         <p>{this.props.productName}</p>
         <form
           autoComplete="off"
-          //   className="OneProduct-form"
+          className="CardProductCard-form "
           onSubmit={this.handleSubmit}
         >
           <label>Quantity : </label>
@@ -40,22 +63,12 @@ class CartDisplayerProduct extends React.Component {
             {(this.state.quantity * this.props.productPrice).toFixed(2)} €
           </div>
         </form>
+        <button onClick={() => this.handleDelete(this.props.productId)}>
+          Delect
+        </button>
       </div>
     );
   }
 }
-
-// function CartDisplayerProduct({userId, productId, productName,
-//     productPrice, quantity, productImg}) {
-//         console.log(quantity);
-//     return (
-//         <div className="CardProductCard">
-//              <img src={productImg} alt={productName} />
-//             <p>{productName}</p>
-//             <p>€ {productPrice * quantity}</p>
-//             <p>Quantity : {quantity}</p>
-//         </div>
-//     )
-// }
 
 export default CartDisplayerProduct;
