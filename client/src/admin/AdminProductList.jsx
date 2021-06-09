@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-class AdminProductList extends Component {
+class AdminProductList extends Component {  
   state = {
     products: [],
   };
