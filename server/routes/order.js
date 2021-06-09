@@ -2,14 +2,14 @@ const express = require("express");
 const router = express.Router();
 const Order = require("./../models/Order");
 
-
 ////  ----- ROUTE PREFIX === /api/order ----- ////
 
-
-// Get the current user's order (for dahsboard)
+// COMPONENT = OrderHistory
+// Get all the current user's orders in the database
 
 router.get("/", (req, res, next) => {
-  Order.find({user: req.session.currentUser.id})
+  Order.find({ user: req.session.currentUser.id })
+    .populate("products")
     .then((userOrders) => {
       res.status(200).json(userOrders);
     })
@@ -17,7 +17,6 @@ router.get("/", (req, res, next) => {
       res.status(500).json(error);
     });
 });
-
 
 // Get a order by ID (when you click on it to get the details -> for client)
 
@@ -38,7 +37,7 @@ router.get("/:id", (req, res, next) => {
 // user: copy the objectID from cart
 // products: [copy ObjectIDs from cart],
 // price: copy price from cart
-// timestamps => can be user to view the date of the order 
+// timestamps => can be user to view the date of the order
 
 //  Update an order ==> cannot update order
 
