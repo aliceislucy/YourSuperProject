@@ -20,15 +20,25 @@ class CartDisplayer extends React.Component {
       });
   }
 
+
+
+  handleDeleteProduct = (id) => {
+    const newProducts = this.state.cartProducts.filter(product => product._id !== id)
+    this.setState({
+      cartProducts: newProducts
+    })
+  }
+
   render() {
     // console.log("---Productscard in UserCart---");
     // console.log(this.state.cartProducts);
 
     if (!this.state.cartProducts) return null;
-
+    console.log(this.state.cartProducts)
     return (
       <div>
         {this.state.cartProducts.map((productSelected) => {
+          
           //  console.log("productSelected._id");
           //  console.log(productSelected);
           return (
@@ -36,6 +46,7 @@ class CartDisplayer extends React.Component {
               productId={productSelected.product._id}
               productName={productSelected.product.name}
               productImg={productSelected.product.productImg}
+              onDelete={this.handleDeleteProduct}
               productPrice={productSelected.product.price}
               quantity={productSelected.quantity}
             />

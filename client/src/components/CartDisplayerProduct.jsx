@@ -22,10 +22,7 @@ class CartDisplayerProduct extends React.Component {
     axios
       .delete("http://localhost:5000/api/cart/" + productId, { withCredentials: true })
       .then(() => {
-        const newProducts = this.state.product.filter(product => product._id !== productId)
-        this.setState({
-          product: newProducts
-        })
+        this.props.onDelete(productId)
       })
       .catch((error) => {
         console.log(error);
