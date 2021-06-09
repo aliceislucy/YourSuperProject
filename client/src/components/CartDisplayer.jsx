@@ -4,16 +4,19 @@ import axios from "axios";
 
 class CartDisplayer extends React.Component {
   state = {
-    cart: [],
+    cardProducts: [],
   };
 
   componentDidMount() {
     axios
       .get("http://localhost:5000/api/cart/", { withCredentials: true })
       .then((res) => {
-        //console.log(res);
+        // console.log('ptitichat');
+        // console.log(res);
+        console.log("humhum");
+        console.log(res.data.products);
         this.setState({
-          cart: res.data,
+          cardProducts : res.data.products,
         });
       })
       .catch((err) => {
@@ -22,13 +25,24 @@ class CartDisplayer extends React.Component {
   }
 
   render() {
-    console.log('prout');
-    console.log(this.state.cart);
+    console.log("prout ??");
+    console.log(this.state.cardProducts);
+
+    if (!this.state.cardProducts) return null;
+
     return (
       <div>
-        {/* {this.state.cart.map(() => {
-          <CartDisplayerProduct />;
-        })} */}
+        {this.state.cardProducts.map((productSelected) => {
+          return (
+            <CartDisplayerProduct
+              productId={productSelected.product._id}
+              productName={productSelected.product.name}
+              productImg={productSelected.product.productImg}
+              productPrice={productSelected.product.price}
+              quantity={productSelected.quantity}
+            />
+          );
+        })}
       </div>
     );
   }
