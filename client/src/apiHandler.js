@@ -36,7 +36,7 @@ const apiHandler = {
       .catch(errorHandler);
   },
   logout() {
-    return service.delete("/auth/logout").catch(errorHandler);
+    return service.get("/auth/logout").catch(errorHandler);
   },
 };
 
