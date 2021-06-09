@@ -13,7 +13,8 @@ import Connection from "./pages/Connection"
 import Press from "./pages/Press"
 import AdminHome from "./admin/AdminHome"
 import ProtectedRoute from "./components/ProtectedRoute"
-
+import SignUpForm from "./components/SignUpForm";
+import LoginForm from "./components/LoginForm";
 
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
         <ProtectedRoute exact path='/cart' component={Cart} />
         <ProtectedRoute exact path='/profile' component={Profile} /> 
         <ProtectedRoute exact path='/dashboard' component={Dashboard} /> 
-        <Route exact path='/connection' component={Connection} />        
+        <Route exact path='/login' component={LoginForm} />        
+        <Route exact path='/signup' component={SignUpForm} />        
         <ProtectedRoute exact path='/admin' component={AdminHome} />
       </Switch>
       <Footer />

@@ -11,10 +11,8 @@ const NavBar = (props) => {
 
   return (
     <nav>
-      <h3>NavBar</h3>
-
       <NavLink exact to="/">
-        <div>YourSuperLogo</div>
+        <img src="https://cdn.shopify.com/s/files/1/1523/0666/t/194/assets/logo.png?v=83684454748928667" alt="YourSuper Logo" />
       </NavLink>
 
       <ul className="nav-list">
@@ -49,7 +47,7 @@ const NavBar = (props) => {
         {!context.isLoggedIn && (
           <React.Fragment>
             <li>
-              <NavLink to="/connection">Log in or sign up</NavLink>
+              <NavLink to="/login">Log in or sign up</NavLink>
             </li>
           </React.Fragment>
         )}
