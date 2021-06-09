@@ -167,7 +167,7 @@ class Profile extends React.Component {
           <div>
             <h2>Member</h2>
 
-            {/* {this.props.context.user.isMember && (
+            {this.props.context.user.isMember && (
               <>
                 <p>You are a Your Super member !</p>
                 <p>
@@ -185,7 +185,7 @@ class Profile extends React.Component {
                 </p>
                 <Link to="/subscribe">Subscribe now !</Link>
               </>
-            )} */}
+            )}
           </div>
 
           <button type="submit">Update profile</button>

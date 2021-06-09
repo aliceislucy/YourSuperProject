@@ -57,9 +57,7 @@ const NavBar = (props) => {
         {context.isLoggedIn && (
           <>
             <li>
-              <NavLink to="/dashboard">
-                Hello {context.user && context.user.firstName}
-              </NavLink>
+              <NavLink to="/dashboard">Dashboard</NavLink>
             </li>
             <li>
               <NavLink exact to="/cart">
@@ -68,7 +66,9 @@ const NavBar = (props) => {
             </li>
 
             <li>
-              <p onClick={handleLogout}>Logout</p>
+              <NavLink to="/connection" onClick={handleLogout}>
+                Logout
+              </NavLink>
             </li>
           </>
         )}
