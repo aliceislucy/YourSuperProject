@@ -4,7 +4,7 @@ import axios from "axios";
 class SumCart extends React.Component {
   state = {
     cartProducts: [],
-    shipping : 5,
+    shipping : 3.73,
   };
 
   componentDidMount() {
@@ -35,7 +35,7 @@ class SumCart extends React.Component {
     sum = sum.toFixed(2)
     return sum
   }
-  
+
   render() {
     return (
       <div>
@@ -45,7 +45,7 @@ class SumCart extends React.Component {
         <br />
         <span>Estimated Shipping : {this.state.shipping} €</span>
         <br />
-        <span>Total : {this.calculSubTotal() + this.state.shipping}€</span>
+        <span>Total : {Number(this.calculSubTotal()) + this.state.shipping}€</span>
         <br />
       </div>
     );
