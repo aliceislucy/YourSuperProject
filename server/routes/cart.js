@@ -10,8 +10,6 @@ router.get("/", (req, res, next) => {
   Cart.findOne({ user: req.session.currentUser.id })
     .populate("products.product")
     .then((cart) => {
-      console.log("cart");
-      console.log(cart);
       res.status(200).json(cart);
     })
     .catch((error) => {

@@ -41,7 +41,7 @@ class Dashboard extends React.Component {
           <div>
             <p>Hello {this.state.user.firstName} !</p>
 
-            {/* <OrderHistory /> */}
+            <OrderHistory />
           </div>
 
           <CartDisplayer />
