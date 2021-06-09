@@ -22,7 +22,7 @@ class LoginForm extends React.Component {
     apiHandler
       .signin(this.state)
       .then((data) => {
-        this.props.context.setUser(data); // update the context
+        this.props.context.setUser(data);
       })
       .catch((error) => {
         console.log(error);
@@ -31,13 +31,6 @@ class LoginForm extends React.Component {
 
   render() {
     if (this.props.context.isLoggedIn) {
-      // This logic is the same as in the <ProtectedRoute /> component
-      // Here this is handled within the component, if there are some views
-      // that are not meant to be rendered to a logged in user,
-      // you could make a generic component out of it, just like <ProtectedRoute />
-      // and instead of checking if the user is not logged in, check if the user is logged in
-      // and redirect him to whatever page you want, in the case below: the home page.
-
       return <Redirect to="/" />;
     }
 

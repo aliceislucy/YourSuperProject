@@ -41,6 +41,9 @@ class OneProduct extends React.Component {
     let addProduct = { quantity : this.state.quantity, product : this.state.product._id }
 
     axios.post("http://localhost:5000/api/cart/", addProduct, {withCredentials: true})
+    .catch((error) => {
+      console.log(error);
+    });
   };
 
   render() {

@@ -8,6 +8,7 @@ import ProductsList from "./pages/ProductList"
 import OneProduct from "./pages/OneProduct"
 import Cart from "./pages/Cart"
 import Profile from "./pages/Profile"
+import Dashboard from "./pages/Dashboard"
 import Connection from "./pages/Connection"
 import Press from "./pages/Press"
 //import ProtectedRoute from "./components/ProtectedRoute"
@@ -26,6 +27,7 @@ function App() {
         <Route exact path='/cart' component={Cart} />
         {/* "Profile" Shoud be a ProtecRoute */}
         <Route exact path='/profile' component={Profile} /> 
+        <Route exact path='/dashboard' component={Dashboard} /> 
         <Route exact path='/connection' component={Connection} />        
         <Route exact path='/press' component={Press} />        
       </Switch>

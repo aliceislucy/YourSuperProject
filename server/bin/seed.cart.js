@@ -10,6 +10,7 @@ const carts = [
     products: [{quantity: 3, product : '60bf34f69fc5c4b7382174c5'},{quantity: 2, product : '60bf34f69fc5c4b7382174c9'}],
   },
 ];
+
 UserModel.find()
   .then((userDocuments) => {
     for (let i = 0; i < carts.length; i++) {

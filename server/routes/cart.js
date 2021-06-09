@@ -21,7 +21,27 @@ router.get("/", (req, res, next) => {
 });
 
 
-//POST (when you click on "Add to Cart" button the Id of the product is added to the user's Cart)
+
+router.post("/", (req, res, next) => {
+  console.log("REQ BODY");
+  console.log(req.body);
+  Cart.findOne({user: req.session.currentUser.id})
+  .then((cart) => {
+    cart.products.push(req.body)
+    cart.save().then(() => {
+      console.log("----------------fffff------------fffffff------");
+      console.log(cart);
+      res.status(200).json(cart);
+    }).catch(next)
+
+   
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json(error);
+    });
+});
+
 
 // DELETE
   

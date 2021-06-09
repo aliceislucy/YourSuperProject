@@ -4,7 +4,6 @@ import withUser from "./../Auth/withUser";
 
 const NavBar = (props) => {
   const { context } = props;
-  console.log(props)
 
   const handleLogout = () => {
     context.removeUser();
@@ -51,7 +50,7 @@ const NavBar = (props) => {
         {context.isLoggedIn && (
           <>
             <li>
-              <NavLink to="/profile">
+              <NavLink to="/dashboard">
                 Hello {context.user && context.user.firstName}
               </NavLink>
             </li>

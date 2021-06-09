@@ -8,19 +8,36 @@ const User = require("../models/User");
 // Get every user inside the database (relevant I guess for admin ?)
 
 router.get("/", (req, res, next) => {
-  User.find()
-    .then((allUsers) => {
-      res.status(200).json(allUsers);
+  User.findById(req.session.currentUser.id)
+  .then((currentUser) => {
+    // console.log("-----THIS IS CURRENT USER-----");
+    // console.log(currentUser);
+    res.status(200).json(currentUser);
     })
     .catch((error) => {
+      console.log(error);
       res.status(500).json(error);
     });
 });
 
 
-// Get a user by ID (irrelevant for this project)
+// Get a currentUser (client/src/pages/Profile) for profile page
 
-// Create a new user (sEE AUTH.JS => SIGN UP
+router.post("/", (req, res, next) => {
+  User.findByIdAndUpdate(req.session.currentUser.id)
+  .then((userToUpdate) => {
+    userToUpdate = req.body
+    console.log("-----THIS IS UPDATED USER-----");
+    console.log(userToUpdate);
+    res.status(200).json(userToUpdate);
+    })
+    .catch((error) => {
+      console.log(error);
+      res.status(500).json(error);
+    });
+});
+
+// Create a new user (SEE AUTH.JS => SIGN UP
 
 //  Update a user (has to be by id to target a certain user)
 
