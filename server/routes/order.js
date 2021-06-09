@@ -5,17 +5,19 @@ const Order = require("./../models/Order");
 
 ////  ----- ROUTE PREFIX === /api/order ----- ////
 
-// Get every order inside the database (relevant for the admins ?)
+
+// Get the current user's order (for dahsboard)
 
 router.get("/", (req, res, next) => {
-  Order.find()
-    .then((allOrders) => {
-      res.status(200).json(allOrders);
+  Order.find({user: req.session.currentUser.id})
+    .then((userOrders) => {
+      res.status(200).json(userOrders);
     })
     .catch((error) => {
       res.status(500).json(error);
     });
 });
+
 
 // Get a order by ID (when you click on it to get the details -> for client)
 

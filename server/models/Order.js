@@ -6,7 +6,6 @@ const orderSchema = new Schema(
     number: String,
     user: { type: Schema.Types.ObjectId, ref: "User" },
     products: [{ type: Schema.Types.ObjectId, ref: "Product" }],
-    price: Number,
   },
   { timestamps: true }
 );

@@ -10,6 +10,7 @@
     "seedproduct": "node ./bin/seed.product.js",
     "seedcomment": "node ./bin/seed.comment.js",
     "seedcart": "node ./bin/seed.cart.js",
+    "seedorder": "node ./bin/seed.order.js",
     "seedall": "node ./bin/seed.user.js ./bin/seed.ingredient.js ./bin/seed.product.js ./bin/seed.comment.js ./bin/seed.cart.js"
   },
   "dependencies": {
