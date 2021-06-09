@@ -2,6 +2,7 @@ import React from "react";
 import CartDisplayer from "../components/CartDisplayer";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import OrderHistory from "../components/OrderHistory"
 
 class Dashboard extends React.Component {
   state = {
@@ -40,9 +41,7 @@ class Dashboard extends React.Component {
           <div>
             <p>Hello {this.state.user.firstName} !</p>
 
-            <div>
-              <h2>Order history</h2>
-            </div>
+            {/* <OrderHistory /> */}
           </div>
 
           <CartDisplayer />

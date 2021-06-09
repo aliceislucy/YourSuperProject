@@ -26,15 +26,10 @@ function App() {
         <Route exact path='/products' component={ProductsList} />
         <Route exact path="/products/:id" component={OneProduct} />
         <ProtectedRoute exact path='/cart' component={Cart} />
-        {/* <Route exact path='/cart' component={Cart} /> */}
         <ProtectedRoute exact path='/profile' component={Profile} /> 
-        {/* <Route exact path='/profile' component={Profile} />  */}
         <ProtectedRoute exact path='/dashboard' component={Dashboard} /> 
-        {/* <Route exact path='/dashboard' component={Dashboard} />  */}
         <Route exact path='/connection' component={Connection} />        
-        {/* <Route exact path='/press' component={Press} />    */}
         <ProtectedRoute exact path='/admin' component={AdminHome} />
-        {/* <Route exact path='/admin' component={AdminHome} /> */}
       </Switch>
       <Footer />
     </div>
