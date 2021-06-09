@@ -10,10 +10,15 @@ import Cart from "./pages/Cart"
 import Profile from "./pages/Profile"
 import Dashboard from "./pages/Dashboard"
 import Press from "./pages/Press"
-import AdminHome from "./admin/AdminHome"
 import ProtectedRoute from "./components/ProtectedRoute"
 import SignUpForm from "./components/SignUpForm";
 import LoginForm from "./components/LoginForm";
+//Admin Import
+import AdminHome from "./admin/AdminHome"
+import AdminProductForm from "./admin/AdminProductForm"
+import EditProductFrom from "./admin/EditProductForm"
+//404 page
+import NotFound from "./pages/NotFound"
 
 
 function App() {
@@ -32,6 +37,9 @@ function App() {
         <Route exact path='/login' component={LoginForm} />        
         <Route exact path='/signup' component={SignUpForm} />        
         <ProtectedRoute exact path='/admin' component={AdminHome} />
+        <ProtectedRoute exact path='/admin/createproduct' component={AdminProductForm} />
+        <ProtectedRoute exact path='/admin/edit/:id' component={EditProductFrom} />
+        <Route component={NotFound} />
       </Switch>
       <Footer />
     </div>

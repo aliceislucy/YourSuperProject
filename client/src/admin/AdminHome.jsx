@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-class AdminHome extends React.Component {  
+class AdminHome extends React.Component {
   state = {
     products: [],
   };
@@ -33,11 +33,11 @@ class AdminHome extends React.Component {
   render() {
     return (
       <div className="AdminProductList">
-        <h1>YourSuper - Admin Home</h1>
+        <h1>YourSuper - Admin - Dashboard</h1>
+        <Link to="/admin/createproduct">Create Product</Link>
         {this.state.products.map((product) => {
           return (
             <div key={product._id} className="Product">
-              {/* <Link to={`/products/${product._id}`}>See details </Link> */}
               <div>
                 <img src={product.productImg} alt={product.name} />
               </div>
@@ -45,7 +45,7 @@ class AdminHome extends React.Component {
               <button onClick={() => this.handleDelete(product._id)}>
                 Delete
               </button>
-              <Link to={`/products/edit/${product._id}`}>Edit</Link>
+              <Link to={`/admin/edit/${product._id}`}>Edit</Link>
             </div>
           );
         })}

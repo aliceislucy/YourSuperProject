@@ -2,8 +2,41 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-class AdminProductForm extends Component {
-  state = {};
+class EditProductFrom extends Component {
+  state = {
+    name: "",
+    productImg: "",
+    description: "",
+    price: 0,
+    quantity: 0,
+    reference: "",
+    ingredients: [],
+    saleByPercentage: 0,
+    saleByValue: 0,
+  };
+
+  componentDidMount() {
+    const id = this.props.match.params.id;
+    axios
+      .get("http://localhost:5000/api/product/" + id)
+      .then((response) => {
+        const product = response.data;
+        this.setState({
+          name: product.name,
+          productImg: product.productImg,
+          description: product.description,
+          price: product.price,
+          quantity: product.quantity,
+          reference: product.reference,
+          ingredients: product.ingredients,
+          saleByPercentage: product.saleByPercentage,
+          saleByValue: product.saleByValue,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   handleChange = (event) => {
     this.setState({
@@ -13,8 +46,8 @@ class AdminProductForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
-    const newProduct = {
+    const id = this.props.match.params.id;
+    const updateValues = {
       name: this.state.name,
       productImg: this.state.image,
       description: this.state.price,
@@ -27,9 +60,9 @@ class AdminProductForm extends Component {
     };
 
     axios
-      .post("http://localhost:5000/api/product/", newProduct)
-      .then((res) => {
-        console.log(res.data);
+      .patch("http://localhost:5000/api/product/" + id, updateValues)
+      .then((response) => {
+        this.props.history.push("/product");
       })
       .catch((error) => {
         console.log(error);
@@ -40,8 +73,9 @@ class AdminProductForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <h2>Edit Product : {this.state.name}</h2>
           <div>
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">Name : </label>
             <input
               type="text"
               name="name"
@@ -51,7 +85,7 @@ class AdminProductForm extends Component {
             />
           </div>
           <div>
-            <label htmlFor="image">Image</label>
+            <label htmlFor="image">Image : </label>
             <input
               type="text"
               name="image"
@@ -61,7 +95,7 @@ class AdminProductForm extends Component {
             />
           </div>
           <div>
-            <label htmlFor="description">Description</label>
+            <label htmlFor="description">Description : </label>
             <input
               type="text"
               name="description"
@@ -71,7 +105,7 @@ class AdminProductForm extends Component {
             />
           </div>
           <div>
-            <label htmlFor="price">Price</label>
+            <label htmlFor="price">Price : </label>
             <input
               type="number"
               name="price"
@@ -81,7 +115,7 @@ class AdminProductForm extends Component {
             />
           </div>
           <div>
-            <label htmlFor="description">quantity</label>
+            <label htmlFor="description">quantity : </label>
             <input
               type="number"
               name="quantity"
@@ -91,7 +125,7 @@ class AdminProductForm extends Component {
             />
           </div>
           <div>
-            <label htmlFor="reference">reference</label>
+            <label htmlFor="reference">reference : </label>
             <input
               type="text"
               name="reference"
@@ -101,7 +135,7 @@ class AdminProductForm extends Component {
             />
           </div>
           <div>
-            <label htmlFor="ingredients">ingredients</label>
+            <label htmlFor="ingredients">ingredients : </label>
             <input
               type="text"
               name="ingredients"
@@ -111,7 +145,7 @@ class AdminProductForm extends Component {
             />
           </div>
           <div>
-            <label htmlFor="saleByPercentage">saleByPercentage</label>
+            <label htmlFor="saleByPercentage">saleByPercentage : </label>
             <input
               type="number"
               name="saleByPercentage"
@@ -121,7 +155,7 @@ class AdminProductForm extends Component {
             />
           </div>
           <div>
-            <label htmlFor="saleByValue">saleByValue</label>
+            <label htmlFor="saleByValue">saleByValue : </label>
             <input
               type="number"
               name="saleByValue"
@@ -130,7 +164,7 @@ class AdminProductForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <button type="submit">Submit New Product</button>
+          <button type="submit">Submit</button>
         </form>
         <Link to={`/admin`}>Back</Link>
       </div>
@@ -138,4 +172,4 @@ class AdminProductForm extends Component {
   }
 }
 
-export default AdminProductForm;
+export default EditProductFrom;
