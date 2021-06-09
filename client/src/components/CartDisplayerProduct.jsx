@@ -17,8 +17,8 @@ class CartDisplayerProduct extends React.Component {
     });
   };
   handleDelete = (productId) => {
-      console.log('productId');
-      console.log(productId);
+    //   console.log('productId');
+    //   console.log(productId);
     axios
       .delete("http://localhost:5000/api/cart/" + productId, { withCredentials: true })
       .then(() => {
@@ -38,8 +38,8 @@ class CartDisplayerProduct extends React.Component {
   //   })
 
   render() {
-    console.log("Product In card");
-    console.log(this.props);
+    // console.log("Product In card");
+    // console.log(this.props);
     return (
       <div className="CardProductCard">
         <img src={this.props.productImg} alt={this.props.productName} />
