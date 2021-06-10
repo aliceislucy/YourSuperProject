@@ -8,7 +8,7 @@ import Button from "../components/Button";
 class SubscribeForm extends React.Component {
   state = {
     email: "",
-    isMember: this.props.context.user.isMember,
+    isMember: false,
     flashMessage: false
   };
 
