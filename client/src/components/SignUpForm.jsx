@@ -36,7 +36,7 @@ class SignUpForm extends Component {
     }
 
     return (
-      <div>
+      <div className="standard-section">
         <form
           autoComplete="off"
           className="form"

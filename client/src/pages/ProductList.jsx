@@ -4,9 +4,8 @@ import ProductDisplayer from "../components/ProductDisplayer"
 class ProducList extends React.Component {
   render() {
     return (
-      <div>
-        <hr />
-        <h2>ProducList Page</h2>
+      <div className="standard-section">
+        <h1>ProducList Page</h1>
         <ProductDisplayer />
       </div>
     );

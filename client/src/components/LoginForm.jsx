@@ -35,7 +35,7 @@ class LoginForm extends React.Component {
     }
 
     return (
-      <div className="form-section">
+      <div className="standard-section">
           <h1>Login</h1>
           <Link to="/signup">Sign up</Link>
 
