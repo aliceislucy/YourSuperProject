@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import IngredientCard from "../components/IngredientCard";
+import Button from "../components/Button";
 import "./../styles/oneProduct.css";
 
 class OneProduct extends React.Component {
@@ -97,7 +98,7 @@ class OneProduct extends React.Component {
             <div>
               {(this.state.quantity * this.state.product.price).toFixed(2)} €
             </div>
-            <button onClick={this.handleSubmit}>Add to cart</button>
+            <Button text="Add to cart"/>
           </form>
         </div>
       </div>

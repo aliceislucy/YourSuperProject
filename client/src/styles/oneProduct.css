@@ -11,13 +11,10 @@
   object-fit: cover;
 }
 
-.oneproduct .fix {
+.oneproduct .fix  {
   position: fixed;
   background: #7f7f7f;
-  background: rgba(255, 255, 255, 0.5);
-}
-
-
-.oneproduct .parent > div{
-    filter: blur(1.5rem);
+  background: rgba(255, 255, 255, 0.685);
+  padding-right: 20vh;
+  /* filter: blur(1.5rem); */
 }

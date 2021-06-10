@@ -4,9 +4,13 @@
   font-size: 1.4em;
   font-weight: 600;
   min-width: 10vh;
-  transition: background-color 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
 
 .button-component:hover {
   background-color: #b2c8eb;
+}
+
+.button-component:active{
+  transform: scale(.96)
 }
