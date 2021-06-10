@@ -23,13 +23,15 @@ class CartDisplayer extends React.Component {
 
 
   handleDeleteProduct = (id) => {
-    const newProducts = this.state.cartProducts.filter(product => product._id !== id)
+    console.log(id)
+    const newProducts = this.state.cartProducts.filter(item => item.product._id !== id)
     this.setState({
       cartProducts: newProducts
     })
   }
 
   render() {
+    console.log(this.state.cartProducts)
     // console.log("---Productscard in UserCart---");
     // console.log(this.state.cartProducts);
 

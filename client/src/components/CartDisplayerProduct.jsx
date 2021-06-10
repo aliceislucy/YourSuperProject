@@ -19,6 +19,7 @@ class CartDisplayerProduct extends React.Component {
   handleDelete = (productId) => {
     //   console.log('productId');
     //   console.log(productId);
+   
     axios
       .delete("http://localhost:5000/api/cart/" + productId, { withCredentials: true })
       .then(() => {
