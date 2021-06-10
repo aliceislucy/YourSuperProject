@@ -1,0 +1,14 @@
+* {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+.SectionHome1 {
+    height: 100vh;
+    padding-top: 10vh;
+    border-bottom: 3px solid;
+
+}

@@ -1,9 +1,10 @@
 import React from "react";
+import "../styles/HomeSection1.css"
 
 const HomeSection1 = () => {
   return (
     <>
-      <section>
+      <section className="SectionHome1">
         <div>HomeSection1</div>
       </section>
     </>
