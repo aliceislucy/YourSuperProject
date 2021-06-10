@@ -11,6 +11,7 @@ import Profile from "./pages/Profile"
 import Dashboard from "./pages/Dashboard"
 import Press from "./pages/Press"
 import ProtectedRoute from "./components/ProtectedRoute"
+import ProtectedRouteAdmin from "./components/ProtectedRouteAdmin"
 import SignUpForm from "./components/SignUpForm";
 import LoginForm from "./components/LoginForm";
 // Admin Import
@@ -38,9 +39,9 @@ function App() {
         <ProtectedRoute exact path='/dashboard' component={Dashboard} /> 
         <Route exact path='/login' component={LoginForm} />        
         <Route exact path='/signup' component={SignUpForm} />        
-        <ProtectedRoute exact path='/admin' component={AdminHome} />
-        <ProtectedRoute exact path='/admin/createproduct' component={AdminProductForm} />
-        <ProtectedRoute exact path='/admin/edit/:id' component={EditProductFrom} />
+        <ProtectedRouteAdmin exact path='/admin' component={AdminHome} />
+        <ProtectedRouteAdmin exact path='/admin/createproduct' component={AdminProductForm} />
+        <ProtectedRouteAdmin exact path='/admin/edit/:id' component={EditProductFrom} />
         <Route component={NotFound} />
       </Switch>
       <Footer />

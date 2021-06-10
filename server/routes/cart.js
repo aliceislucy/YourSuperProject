@@ -25,7 +25,7 @@ router.delete("/:id", (req, res, next) => {
   Cart.findOneAndUpdate(
     { user: req.session.currentUser.id },
     {
-      $pull: { products: { $elemMatch: { product: req.params.id } } },
+      $pull : {products : {product: req.params.id} },
     },
     { new: true }
   ).then((updatedCart) => {

@@ -6,7 +6,7 @@ const ProtectedRoute = ({ component: Component, context, ...rest }) => {
 console.log(context);
   if (context.isLoading) {
     return null;
-  } else if (context.isLoggedIn) {
+  } else if (context.isLoggedIn  && context.user.isAdmin === true) {
     return <Route {...rest} render={(props) => <Component {...props} />} />;
   } else {
     return <Redirect to="/connection" />;
