@@ -1,6 +1,6 @@
 import React from "react";
-//import { withRouter } from "react-router-dom";
-// import apiHandler from "./../apiHandler";
+import withUser from "./../Auth/withUser";
+import { Link } from "react-router-dom";
 
 class SubscribeForm extends React.Component {
   state = {
@@ -14,13 +14,15 @@ class SubscribeForm extends React.Component {
     this.setState({ [key]: value });
   };
 
+  handleSubmit = () => {
+
+  }
+
   
 
   render() {
     return (
-      <section className="form-section">
-        <h2>SubscribeForm</h2>
-
+      <section>
         <form
           autoComplete="off"
           className="form"
@@ -35,11 +37,14 @@ class SubscribeForm extends React.Component {
             id="email"
             name="email"
           />
-          <button>Subscribe !</button>
+          <button>Subscribe</button>
         </form>
+        <div>
+          <p>To become a privileged member <Link to="/signup">create your account</Link> first</p>
+        </div>
       </section>
     );
   }
 }
 
-export default SubscribeForm;
+export default withUser(SubscribeForm);

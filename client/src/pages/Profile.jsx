@@ -73,7 +73,7 @@ class Profile extends React.Component {
       return <Redirect to="/dashboard" />;
     }
       return (
-      <div>
+      <div className="standard-section">
         <h1>Update profile</h1>
         <form onSubmit={this.handleSubmit}>
           <div>

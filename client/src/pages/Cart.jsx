@@ -6,7 +6,7 @@ import SumCart from "../components/SumCart";
 class Cart extends React.Component {
   render() {
     return (
-      <div>
+      <div className="standard-section">
         <h2>Cart</h2>
         <CartDisplayer />
         <SumCart />

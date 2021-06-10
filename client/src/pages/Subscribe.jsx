@@ -8,8 +8,8 @@ import SubscribeForm from "../components/SubscribeForm";
 class Subscribe extends React.Component {
   render() {
     return (
-      <div>
-        <h2>Subscribe page</h2>
+      <div className="standard-section">
+        <h1>Become a member</h1>
         
         <SubscribeForm />
       </div>

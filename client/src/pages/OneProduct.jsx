@@ -50,7 +50,7 @@ class OneProduct extends React.Component {
 
     if (!this.state.product) return null;
     return (
-      <div className="OneProduct">
+      <div className="standard-section">
         <div className="OneProduct-container">
           <div>
             <h2>{this.state.product.name}</h2>

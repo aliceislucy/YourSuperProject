@@ -3,7 +3,7 @@ import PressArticle from "./../components/PressArticle"
 
 function Press() {
   return (
-    <div>
+    <div className="standard-section">
       <section>
       <h1>They talk about us in the press !</h1>
         <PressArticle

@@ -13,12 +13,14 @@ import Press from "./pages/Press"
 import ProtectedRoute from "./components/ProtectedRoute"
 import SignUpForm from "./components/SignUpForm";
 import LoginForm from "./components/LoginForm";
-//Admin Import
+// Admin Import
 import AdminHome from "./admin/AdminHome"
 import AdminProductForm from "./admin/AdminProductForm"
 import EditProductFrom from "./admin/EditProductForm"
-//404 page
+// 404 page
 import NotFound from "./pages/NotFound"
+// CSS
+import "./styles/app.css";
 
 
 function App() {

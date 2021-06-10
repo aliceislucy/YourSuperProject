@@ -1,12 +1,9 @@
 import React from "react";
+import "./../styles/footer.css";
 
 const Footer = () => {
   return (
-    <>
-      <hr />
-      <footer>ich bin ein schöne Footer </footer>
-      <hr />
-    </>
+      <footer id="footer">ich bin ein schöne Footer </footer>
   );
 };
 
