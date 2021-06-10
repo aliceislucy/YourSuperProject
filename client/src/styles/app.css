@@ -13,11 +13,15 @@
   top: 10vh;
   width: 100%;
   height: max-content;
+  padding: 3vh;
 }
 
 h1 {
-  font-size: 2em;
-  font-variant: small-caps
+  font-size: 3em;
+  border-bottom: solid black 2px;
+  width: max-content;
+  padding-bottom: 1vh;
+  margin-bottom: 5vh;
 }
 
 input {
@@ -25,4 +29,5 @@ input {
   padding: 3px 5px;
   border: solid black 2px;
   font-size: 1em;
+  width: 30vh;
 }

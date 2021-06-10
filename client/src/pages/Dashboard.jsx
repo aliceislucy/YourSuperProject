@@ -2,8 +2,9 @@ import React from "react";
 import CartDisplayer from "../components/CartDisplayer";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import OrderHistory from "../components/OrderHistory"
-import SumCart from "../components/SumCart"
+import OrderHistory from "../components/OrderHistory";
+import SumCart from "../components/SumCart";
+import "./../styles/dashboard.css";
 
 class Dashboard extends React.Component {
   state = {
@@ -25,22 +26,22 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className="standard-section">
-        <div>
-          <div>
+      <div className="standard-section dashboard">
+        <div className="header">
+          <h1>My Dashboard</h1>
+          <div className="update-profile">
+            <Link to="/profile">Update my profile</Link>
             <img
               src={this.state.user.profileImg}
               alt={this.state.user.firstName}
+              className="profile-picture"
             />
-            <h1>My Dashboard</h1>
           </div>
-
-          <Link to="/profile">Update my profile</Link>
         </div>
 
         <div>
           <div>
-            <p>Hello {this.state.user.firstName} !</p>
+            <h2>Hello {this.state.user.firstName} !</h2>
 
             <OrderHistory />
           </div>

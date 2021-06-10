@@ -1,13 +1,15 @@
 import React from "react";
-import withUser from "./../Auth/withUser";
 import { Link } from "react-router-dom";
-import Button from "../components/Button";
+import withUser from "./../Auth/withUser";
 import apiHandler from "./../apiHandler";
+import Button from "../components/Button";
+
 
 class SubscribeForm extends React.Component {
   state = {
     email: "",
-    isMember: "",
+    isMember: this.props.context.user.isMember,
+    flashMessage: false
   };
 
   handleChange = (event) => {
@@ -22,18 +24,31 @@ class SubscribeForm extends React.Component {
     apiHandler
       .subscribe(this.state)
       .then((data) => {
-        console.log(data);
-        // this.props.context.setUser(data);
+        this.props.context.setUser(data)
+        this.setState({ isMember: data.isMember});
       })
       .catch((error) => {
         console.log(error);
       });
 
-      // if(isMember) {
-      //   this.setState({
-      //     isMember: !isMember
-      //   })
-      }  
+      console.log(this.props.context);
+
+      let currentUser = this.props.context.user
+
+
+      if(currentUser === null) {
+        this.setState({
+          flashMessage: true
+        })
+      }
+
+      if(currentUser.isMember) {
+        this.setState({
+          isMember: true
+        })
+      }
+
+    }  
 
   render() {
     return (
@@ -57,6 +72,12 @@ class SubscribeForm extends React.Component {
         <div>
           <p>To become a privileged member <Link to="/signup">create your account</Link> first</p>
         </div>
+        {this.state.flashMessage && (
+        <div className="flashMessage">Please sign up first to become a member</div>
+        )}
+        {this.state.isMember && (
+        <div className="flashMessage">Congrats you're a member ! Enjoy ;)</div>
+        )}
       </section>
     );
   }

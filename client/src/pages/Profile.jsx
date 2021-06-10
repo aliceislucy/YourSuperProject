@@ -2,6 +2,8 @@ import React from "react";
 import axios from "axios";
 import { Link, Redirect } from "react-router-dom";
 import withUser from "./../Auth/withUser";
+import Button from "../components/Button";
+import "./../styles/profile.css";
 
 class Profile extends React.Component {
   state = {
@@ -58,14 +60,14 @@ class Profile extends React.Component {
 
     axios
       .post("http://localhost:5000/api/user/", updateValues, {withCredentials: true})
-      // .then(() => {
-      //   this.setState({
-      //       isSubmitted: true,
-      //     });
-      // })
-      // .catch((error) => {
-      //   console.log(error);
-      // });
+      .then(() => {
+        this.setState({
+            isSubmitted: true,
+          });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   
   render() {
@@ -73,10 +75,10 @@ class Profile extends React.Component {
       return <Redirect to="/dashboard" />;
     }
       return (
-      <div className="standard-section">
+      <div className="standard-section profile">
         <h1>Update profile</h1>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="picture">
             <img
               src={this.state.profileImg}
               alt={this.state.firstName}
@@ -90,9 +92,9 @@ class Profile extends React.Component {
             />
           </div>
 
-          <div>
+          <div className="formtext">
+            <div className="section">
             <h2>Name</h2>
-            <div>
               <div>
                 <label htmlFor="firstName">First name :</label>
                 <input
@@ -115,9 +117,9 @@ class Profile extends React.Component {
                 />
               </div>
             </div>
-          </div>
+          
 
-          <div>
+          <div className="section">
             <h2>Email</h2>
             <input
               type="email"
@@ -128,7 +130,7 @@ class Profile extends React.Component {
             />
           </div>
 
-          <div>
+          <div className="section">
             <h2>Password</h2>
             <div>
               <div>
@@ -153,7 +155,7 @@ class Profile extends React.Component {
             </div>
           </div>
 
-          <div>
+          <div className="section">
             <h2>Address</h2>
             <input
               type="address"
@@ -164,8 +166,8 @@ class Profile extends React.Component {
             />
           </div>
 
-          <div>
-            <h2>Member</h2>
+          <div className="section">
+            <h2>Membership</h2>
 
             {this.props.context.user.isMember && (
               <>
@@ -188,7 +190,8 @@ class Profile extends React.Component {
             )}
           </div>
 
-          <button type="submit">Update profile</button>
+          <Button text="Update now"/>
+          </div>
         </form>
       </div>
     );
