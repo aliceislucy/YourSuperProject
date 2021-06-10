@@ -83,7 +83,7 @@ const NavBar = (props) => {
                   to="/login"
                   style={{ textDecoration: "none"}}
                 >
-                  <i class="fas fa-sign-in-alt"></i>
+                  <i className="fas fa-sign-in-alt"></i>
                 </NavLink>
               </li>
             </React.Fragment>
@@ -97,7 +97,7 @@ const NavBar = (props) => {
                   to="/dashboard"
                   style={{ textDecoration: "none" }}
                 >
-                  <i class="fas fa-user-circle"></i>
+                  <i className="fas fa-user-circle"></i>
                 </NavLink>
               </li>
               <li>
@@ -107,7 +107,7 @@ const NavBar = (props) => {
                   to="/cart"
                   style={{ textDecoration: "none" }}
                 >
-                  <i class="fas fa-shopping-cart"></i>
+                  <i className="fas fa-shopping-cart"></i>
                 </NavLink>
               </li>
 
@@ -118,7 +118,7 @@ const NavBar = (props) => {
                   onClick={handleLogout}
                   style={{ textDecoration: "none" }}
                 >
-                  <i class="fas fa-sign-out-alt"></i>
+                  <i className="fas fa-sign-out-alt"></i>
                 </NavLink>
               </li>
             </>

@@ -2,6 +2,7 @@ import React from "react";
 import withUser from "./../Auth/withUser";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
+import apiHandler from "./../apiHandler";
 
 class SubscribeForm extends React.Component {
   state = {
@@ -15,11 +16,24 @@ class SubscribeForm extends React.Component {
     this.setState({ [key]: value });
   };
 
-  handleSubmit = () => {
+  handleSubmit = (event) => {
+    event.preventDefault();
 
-  }
+    apiHandler
+      .subscribe(this.state)
+      .then((data) => {
+        console.log(data);
+        // this.props.context.setUser(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-  
+      // if(isMember) {
+      //   this.setState({
+      //     isMember: !isMember
+      //   })
+      }  
 
   render() {
     return (

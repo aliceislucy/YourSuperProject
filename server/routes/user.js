@@ -5,7 +5,7 @@ const User = require("../models/User");
 
 ////  ----- ROUTE PREFIX === /api/user ----- ////
 
-// Get every user inside the database (relevant I guess for admin ?)
+// Get a currentUser
 
 router.get("/", (req, res, next) => {
   User.findById(req.session.currentUser.id)
@@ -21,7 +21,7 @@ router.get("/", (req, res, next) => {
 });
 
 
-// Get a currentUser (client/src/pages/Profile) for profile page
+// Update a currentUser (client/src/pages/Profile) for profile page
 
 router.post("/", (req, res, next) => {
   User.findByIdAndUpdate(req.session.currentUser.id)
@@ -35,6 +35,22 @@ router.post("/", (req, res, next) => {
       console.log(error);
       res.status(500).json(error);
     });
+});
+
+// Subscribe page => will compare the email of currentUser
+// inside the database
+
+router.post("/subscribe", (req, res, next) => {
+  const { email } = req.body;
+  User.findOneAndUpdate({ email })
+    .then((user) => {
+      if (!user) {
+        return res.status(400).json({ message: "You need to sign up first !" });
+      }
+
+      user.isMember = true
+    })
+    .catch(next);
 });
 
 // Create a new user (SEE AUTH.JS => SIGN UP

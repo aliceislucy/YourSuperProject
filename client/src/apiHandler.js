@@ -29,14 +29,23 @@ const apiHandler = {
       .then((res) => res.data)
       .catch(errorHandler);
   },
+
   isLoggedIn() {
     return service
       .get("/auth/isLoggedIn")
       .then((res) => res.data)
       .catch(errorHandler);
   },
+
   logout() {
     return service.get("/auth/logout").catch(errorHandler);
+  },
+
+  subscribe(userInfo) {
+    return service
+      .post("/user/subscribe", userInfo)
+      .then((res) => res.data)
+      .catch(errorHandler);
   },
 };
 
