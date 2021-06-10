@@ -80,11 +80,13 @@ router.post("/", (req, res, next) => {
 //  Update a product (has to be by id to target a certain product)
 
 router.patch("/:id", (req, res, next) => {
+  console.log(req.body);
   Product.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then((updatedProduct) => {
       res.status(200).json(updatedProduct);
     })
     .catch((error) => {
+      console.log(error);
       res.status(500).json(error);
     });
 });

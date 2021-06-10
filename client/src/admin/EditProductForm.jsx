@@ -50,20 +50,20 @@ class EditProductFrom extends Component {
     const id = this.props.match.params.id;
     const updateValues = {
       name: this.state.name,
-      productImg: this.state.image,
-      description: this.state.price,
+      productImg: this.state.productImg,
+      description: this.state.description,
       price: this.state.price,
-      quantity: this.state.price,
-      reference: this.state.price,
-      ingredients: this.state.price,
-      saleByPercentage: this.state.price,
-      saleByValue: this.state.price,
+      quantity: this.state.quantity,
+      reference: this.state.reference,
+      ingredients: this.state.ingredients,
+      saleByPercentage: this.state.saleByPercentage,
+      saleByValue: this.state.saleByValue,
     };
 
     axios
       .patch("http://localhost:5000/api/product/" + id, updateValues)
       .then((response) => {
-        this.props.history.push("/product");
+        this.props.history.push("/admin");
       })
       .catch((error) => {
         console.log(error);
