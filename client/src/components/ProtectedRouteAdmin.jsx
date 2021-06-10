@@ -1,8 +1,8 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
-import withUser  from "./../Auth/withUser";
+import withUser  from "../Auth/withUser";
 
-const ProtectedRoute = ({ component: Component, context, ...rest }) => {
+const ProtectedRouteAdmin = ({ component: Component, context, ...rest }) => {
 console.log(context);
   if (context.isLoading) {
     return null;
@@ -13,4 +13,4 @@ console.log(context);
   }
 };
 
-export default withUser(ProtectedRoute);
+export default withUser(ProtectedRouteAdmin);
