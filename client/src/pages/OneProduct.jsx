@@ -58,7 +58,7 @@ class OneProduct extends React.Component {
     if (!this.state.product) return null;
     return (
       <div className="standard-section oneproduct">
-        <div className="OneProduct-container">
+        <div className="leftside">
           <div className="parent">
             <div className="fix">
               <h1>{this.state.product.name}</h1>
@@ -68,26 +68,27 @@ class OneProduct extends React.Component {
               alt={this.state.product.name}
             />
           </div>
-          <div>
+        </div>
+        <div className="rightside">
+          <h2>Why do I need the {this.state.product.name} powder ?</h2>
+          <p>{this.state.product.description}</p>
+          <div className="ingredientlist">
             {this.state.product.ingredients.map((ingredient) => {
               return (
                 <IngredientCard
                   key={ingredient._id}
                   name={ingredient.name}
                   ingredientImg={ingredient.ingredientImg}
-                  description={ingredient.description}
                 />
               );
             })}
           </div>
-        </div>
-        <div className="OneProduct-container">
-          <p>{this.state.product.description}</p>
           <form
             autoComplete="off"
             className="OneProduct-form"
             onSubmit={this.handleSubmit}
           >
+            <div className="quantitybar">
             <label>Quantity</label>
             <input
               type="number"
@@ -95,8 +96,9 @@ class OneProduct extends React.Component {
               value={this.state.quantity}
               onChange={this.handleChange}
             />
-            <div>
+            <div className="total">
               {(this.state.quantity * this.state.product.price).toFixed(2)} €
+            </div>
             </div>
             <Button text="Add to cart"/>
           </form>

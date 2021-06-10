@@ -1,14 +1,29 @@
 .oneproduct {
-}
-
-.oneproduct {
   display: flex;
 }
 
+.oneproduct h1 {
+    margin-bottom: 10vh;
+}
+
 .oneproduct img {
-  height: 70vh;
-  width: 70vh;
+  height: 80vh;
+  width: 75vh;
   object-fit: cover;
+}
+
+.oneproduct label {
+    font-size: 1.4em;
+    margin-right: 0.6vh;
+  }
+
+.oneproduct input {
+    width : 50px;
+  }
+  
+.oneproduct input[type=number]::-webkit-inner-spin-button, 
+.oneproduct input[type=number]::-webkit-outer-spin-button {  
+   opacity: 1;
 }
 
 .oneproduct .fix  {
@@ -18,3 +33,60 @@
   padding-right: 20vh;
   /* filter: blur(1.5rem); */
 }
+
+
+.oneproduct .rightside {
+    margin: 10vh 20vh 0 0;
+    width: 46%;
+}
+
+.oneproduct h2 {
+    font-size: 2.5em;
+    margin-bottom: 4vh;
+}
+
+.oneproduct p {
+    font-size: 1.4em;
+    margin-bottom: 6vh;
+    text-align: justify;
+}
+
+
+.oneproduct .quantitybar {
+    display: flex;
+    align-items: center;
+    margin: 5vh 0;
+}
+
+.oneproduct .total {
+    font-size: 2em;
+    font-weight: 600;
+    margin-left: 3vh;
+}
+
+.ingredient {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: min-content;
+    width: min-content;
+}
+
+.ingredient img {
+    height: 17vh;
+    width: 17vh;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 0.5vh solid black;
+}
+
+.ingredient h3 {
+    font-size: 1.6em;
+    margin-top: 1.5vh;
+}
+
+.oneproduct .ingredientlist{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }

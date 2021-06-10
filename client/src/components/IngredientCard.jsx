@@ -1,14 +1,13 @@
 import React from 'react';
-
-// import styles here
+import "./../styles/oneProduct.css";
 
 
 function IngredientCard({ name, ingredientImg, description }) {
   return (
-    <div className="IngredientCard">
-        <h3>{name}</h3>
+    <div className="ingredient">
         <img src={ingredientImg} alt={name} />
-        <p>{description}</p>
+        <h3>{name}</h3>
+        <div>{description}</div>
     </div>
   );
 }

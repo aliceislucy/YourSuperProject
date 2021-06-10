@@ -12,7 +12,7 @@
   position: relative;
   width: 100%;
   height: max-content;
-  padding: 3vh;
+  padding: 3vh 3vh 0 3vh;
   min-height: 84.8vh;
 }
 
