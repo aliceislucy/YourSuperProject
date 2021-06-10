@@ -1,0 +1,19 @@
+.oneproduct {
+}
+
+.oneproduct {
+  display: flex;
+}
+
+.oneproduct img {
+  height: 70vh;
+  width: 70vh;
+  object-fit: cover;
+}
+
+.oneproduct .fix {
+  position: fixed;
+  background: #7f7f7f;
+  background: rgba(255, 255, 255, 0.5);
+  filter: blur(1.5rem);
+}

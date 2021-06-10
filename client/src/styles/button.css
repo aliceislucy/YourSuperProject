@@ -3,4 +3,10 @@
   border: 3px solid black;
   font-size: 1.4em;
   font-weight: 600;
+  min-width: 10vh;
+  transition: background-color 0.3s ease-out;
+}
+
+.button-component:hover {
+  background-color: #b2c8eb;
 }

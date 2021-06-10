@@ -1,0 +1,25 @@
+.loginform .form-group {
+    display: flex;
+    align-items: center;
+}
+
+.loginform h1{
+    margin-bottom: 0.5vh;
+}
+
+.loginform .space{
+    margin-top: 6vh;
+}
+
+.loginform label{
+    font-size: 2em;
+    padding-bottom: 2px;
+}
+
+.loginform input{
+    margin-left: 2.2vh;
+}
+
+.loginform .margin {
+    margin: 4vh 0;
+}
