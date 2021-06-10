@@ -1,0 +1,12 @@
+.productDisplayer{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 10vh;
+    border-left: 6px solid black;
+    border-right: 6px solid black;
+    text-align: center;
+    padding-bottom: 6vh;
+    
+}

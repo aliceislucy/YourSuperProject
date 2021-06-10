@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
+import "../styles/productDisplayer.css"
 
 class ProductDisplayer extends React.Component {
   state = {
@@ -33,7 +34,7 @@ class ProductDisplayer extends React.Component {
     if (!this.state.products) return null;
 
     return (
-      <div>
+      <div className="productDisplayer">
         {this.state.products.map((product) => {
           return (
             <ProductCard

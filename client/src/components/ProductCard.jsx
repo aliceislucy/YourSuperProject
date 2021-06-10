@@ -1,15 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/productCard.css"
+import "../styles/button.css"
 
 function ProductCard({ productImg, name, productId, quantity, handleSubmit }) {
 
     return (
-      <div className="IngredientCard">
+      <div className="productCard">
         <Link to={`/products/${productId}`}>
           <img src={productImg} alt={name} />
           <p>{name}</p>
         </Link>
-          {quantity ? <button name={productId} onClick={() =>handleSubmit(productId)}>Add to cart</button> : <p>Sold Out</p>}
+          {quantity ? <button  className="button-component" name={productId} onClick={() =>handleSubmit(productId)}><p>Add to cart</p></button> : <p>Sold Out</p>}
       </div>
     );
 }
