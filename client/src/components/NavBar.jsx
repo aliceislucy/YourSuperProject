@@ -22,7 +22,7 @@ const NavBar = (props) => {
             />
           </NavLink>
         </div>
-
+    
         <ul className="nav-list">
           <li>
             <NavLink
@@ -97,7 +97,7 @@ const NavBar = (props) => {
                   to="/dashboard"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  <i className="fas fa-user-circle"></i>
+                  <p>Dashboard</p>
                 </NavLink>
               </li>
               <li>
@@ -118,7 +118,7 @@ const NavBar = (props) => {
                   onClick={handleLogout}
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  Logout
+                  <i class="fas fa-sign-out-alt"></i>
                 </NavLink>
               </li>
             </>
