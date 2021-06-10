@@ -15,5 +15,9 @@
   position: fixed;
   background: #7f7f7f;
   background: rgba(255, 255, 255, 0.5);
-  filter: blur(1.5rem);
+}
+
+
+.oneproduct .parent > div{
+    filter: blur(1.5rem);
 }

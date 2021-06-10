@@ -13,7 +13,7 @@ class OneProduct extends React.Component {
     const productId = this.props.match.params.id;
 
     axios
-      .get(process.env.REACT_APP_BACKEND_URL+"/api/product/" + productId)
+      .get(process.env.REACT_APP_BACKEND_URL + "/api/product/" + productId)
       .then((res) => {
         this.setState({
           product: res.data,
@@ -28,7 +28,7 @@ class OneProduct extends React.Component {
     let { name, value } = event.target;
 
     if (value < 1) {
-      value = 1
+      value = 1;
     }
 
     this.setState({
@@ -39,23 +39,28 @@ class OneProduct extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    let addProduct = { quantity : this.state.quantity, product : this.state.product._id }
+    let addProduct = {
+      quantity: this.state.quantity,
+      product: this.state.product._id,
+    };
 
-    axios.post(process.env.REACT_APP_BACKEND_URL+"/api/cart/", addProduct, {withCredentials: true})
-    .catch((error) => {
-      console.log(error);
-    });
+    axios
+      .post(process.env.REACT_APP_BACKEND_URL + "/api/cart/", addProduct, {
+        withCredentials: true,
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {
-
     if (!this.state.product) return null;
     return (
       <div className="standard-section oneproduct">
         <div className="OneProduct-container">
-          <div>
+          <div className="parent">
             <div className="fix">
-            <h1>{this.state.product.name}</h1>
+              <h1>{this.state.product.name}</h1>
             </div>
             <img
               src={this.state.product.productImg}
@@ -77,7 +82,11 @@ class OneProduct extends React.Component {
         </div>
         <div className="OneProduct-container">
           <p>{this.state.product.description}</p>
-          <form autoComplete="off" className="OneProduct-form" onSubmit={this.handleSubmit}>
+          <form
+            autoComplete="off"
+            className="OneProduct-form"
+            onSubmit={this.handleSubmit}
+          >
             <label>Quantity</label>
             <input
               type="number"
@@ -86,7 +95,7 @@ class OneProduct extends React.Component {
               onChange={this.handleChange}
             />
             <div>
-            {(this.state.quantity * this.state.product.price).toFixed(2)} €
+              {(this.state.quantity * this.state.product.price).toFixed(2)} €
             </div>
             <button onClick={this.handleSubmit}>Add to cart</button>
           </form>
