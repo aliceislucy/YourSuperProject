@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import withUser from "./../Auth/withUser";
 import apiHandler from "./../apiHandler";
 import Button from "../components/Button";
-
+import "./../styles/loginform.css";
 
 
 class LoginForm extends React.Component {
@@ -37,14 +37,15 @@ class LoginForm extends React.Component {
     }
 
     return (
-      <div className="standard-section">
+      <div className="standard-section loginform">
           <h1>Login</h1>
-          <Link to="/signup">Sign up</Link>
+          <Link className="loginlink" to="/signup" style={{ textDecoration: "none", color: "black", fontWeight: "600"}}>➡ Sign up</Link>
+          
 
 
         <form autoComplete="off" className="form" onSubmit={this.handleSubmit}>
 
-          <div>
+          <div className="form-group space">
             <label className="label" htmlFor="email">
               Email
             </label>
@@ -71,14 +72,10 @@ class LoginForm extends React.Component {
               name="password"
             />
           </div>
-          <Button text="Log in"/>
-          <Link to="/signup">Don't have an account yet? Sign up !</Link>
+          <Link to="/signup" style={{ textDecoration: "none", color: "#bf8f98", fontWeight: "600"}}>Don't have an account yet? Sign up !</Link>
+          <div className="margin"></div>
+          <Button text="Ok"/>
         </form>
-
-        <div>
-          <p>Can't log in ? If you didn't set up an account when you purchased, then you need to </p>
-          <Link to="/signup">create one now !</Link>
-        </div>
       </div>
     );
   }

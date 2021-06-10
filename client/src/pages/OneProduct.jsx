@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import IngredientCard from "../components/IngredientCard";
+import "./../styles/oneProduct.css";
 
 class OneProduct extends React.Component {
   state = {
@@ -50,10 +51,12 @@ class OneProduct extends React.Component {
 
     if (!this.state.product) return null;
     return (
-      <div className="standard-section">
+      <div className="standard-section oneproduct">
         <div className="OneProduct-container">
           <div>
-            <h2>{this.state.product.name}</h2>
+            <div className="fix">
+            <h1>{this.state.product.name}</h1>
+            </div>
             <img
               src={this.state.product.productImg}
               alt={this.state.product.name}
