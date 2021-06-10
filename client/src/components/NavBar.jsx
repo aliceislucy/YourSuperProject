@@ -114,7 +114,7 @@ const NavBar = (props) => {
               <li>
                 <NavLink
                   className="navlink"
-                  to="/connection"
+                  to="/"
                   onClick={handleLogout}
                   style={{ textDecoration: "none" }}
                 >

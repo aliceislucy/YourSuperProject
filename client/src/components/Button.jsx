@@ -1,11 +1,11 @@
 import React from "react";
-
+import "./../styles/button.css";
 
 const Button = ({text}) => {
 
   return (
     <>
-     <button>{text}</button>
+     <button className="button-component">{text}</button>
     </>
   );
 };

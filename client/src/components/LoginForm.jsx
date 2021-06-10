@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import withUser from "./../Auth/withUser";
 import apiHandler from "./../apiHandler";
+import Button from "../components/Button";
 
 
 class LoginForm extends React.Component {
@@ -69,8 +70,8 @@ class LoginForm extends React.Component {
               name="password"
             />
           </div>
+          <Button text="Log in"/>
           <Link to="/signup">Don't have an account yet? Sign up !</Link>
-          <button className="btn-submit">Log in</button>
         </form>
 
         <div>

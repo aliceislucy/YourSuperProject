@@ -1,0 +1,13 @@
+* {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .button-component {
+      padding: 1.1vh;
+      border: 3px solid black;
+      font-size: 1.4em;
+      font-weight: 600;
+  }

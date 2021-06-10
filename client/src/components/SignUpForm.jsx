@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import withUser from "../Auth/withUser";
 import apiHandler from "./../apiHandler";
+import Button from "../components/Button";
 
 class SignUpForm extends Component {
   state = {};
@@ -43,7 +44,7 @@ class SignUpForm extends Component {
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         >
-          <h2>Create account</h2>
+          <h1>Create account</h1>
 
           <div className="form-group">
             <label className="label" htmlFor="firstName">
@@ -88,7 +89,7 @@ class SignUpForm extends Component {
             />
           </div>
 
-          <button className="btn-submit">Sign up</button>
+          <Button text="Sign up"/>
         </form>
 
         <div className="form-section link">
