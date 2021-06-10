@@ -37,9 +37,7 @@ router.delete("/:id", (req, res, next) => {
 // => TO ADD A PRODUCT TO THE CURRENT USER'S CART
 
 router.post("/", (req, res, next) => {
-
-
-  console.log(req.body)
+  console.log(req.body);
 
   Cart.findOne({ user: req.session.currentUser.id })
     .then((cart) => {
@@ -54,27 +52,25 @@ router.post("/", (req, res, next) => {
           })
           .catch(next);
       } else {
-      
-        const foundProduct = cart.products.find(item => item.product.toString() === req.body.product)
+        const foundProduct = cart.products.find(
+          (item) => item.product.toString() === req.body.product
+        );
 
-        if(foundProduct){
-          foundProduct.quantity += req.body.quantity
-        }else{
-          cart.products.push(req.body)
+        if (foundProduct) {
+          foundProduct.quantity += req.body.quantity;
+        } else {
+          cart.products.push(req.body);
         }
 
-        cart.save().then(savedCart => {
-          console.log(savedCart)
-          res.status(200).json(savedCart)
-        }).catch(error => {
-          next(error)
-        })
-
-
-
-
-      
-
+        cart
+          .save()
+          .then((savedCart) => {
+            console.log(savedCart);
+            res.status(200).json(savedCart);
+          })
+          .catch((error) => {
+            next(error);
+          });
       }
     })
     .catch((error) => {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import '../styles/EditProductForm.css'
+import '../styles/editProductForm.css'
 
 class EditProductFrom extends Component {
   state = {
