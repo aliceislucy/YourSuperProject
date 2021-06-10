@@ -39,7 +39,7 @@ const NavBar = (props) => {
               className="navlink"
               exact
               to="/press+media"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", color: "black" }}
             >
               Press + Media
             </NavLink>
@@ -49,7 +49,7 @@ const NavBar = (props) => {
               className="navlink"
               exact
               to="/about"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", color: "black" }}
             >
               Our Story
             </NavLink>
@@ -60,7 +60,7 @@ const NavBar = (props) => {
               className="navlink"
               exact
               to="/subscribe"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", color: "black" }}
             >
               Subscribe
             </NavLink>
@@ -81,9 +81,9 @@ const NavBar = (props) => {
                 <NavLink
                   className="navlink"
                   to="/login"
-                  style={{ textDecoration: "none"}}
+                  style={{ textDecoration: "none", color: "black" }}
                 >
-                  <i className="fas fa-sign-in-alt"></i>
+                  Login
                 </NavLink>
               </li>
             </React.Fragment>
@@ -95,7 +95,7 @@ const NavBar = (props) => {
                 <NavLink
                   className="navlink"
                   to="/dashboard"
-                  style={{ textDecoration: "none" }}
+                  style={{ textDecoration: "none", color: "black" }}
                 >
                   <i className="fas fa-user-circle"></i>
                 </NavLink>
@@ -105,7 +105,7 @@ const NavBar = (props) => {
                   className="navlink"
                   exact
                   to="/cart"
-                  style={{ textDecoration: "none" }}
+                  style={{ textDecoration: "none", color: "black" }}
                 >
                   <i className="fas fa-shopping-cart"></i>
                 </NavLink>
@@ -116,9 +116,9 @@ const NavBar = (props) => {
                   className="navlink"
                   to="/"
                   onClick={handleLogout}
-                  style={{ textDecoration: "none" }}
+                  style={{ textDecoration: "none", color: "black" }}
                 >
-                  <i className="fas fa-sign-out-alt"></i>
+                  Logout
                 </NavLink>
               </li>
             </>

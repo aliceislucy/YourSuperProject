@@ -17,14 +17,14 @@ class AdminProductForm extends Component {
 
     const newProduct = {
       name: this.state.name,
-      productImg: this.state.image,
-      description: this.state.price,
+      productImg: this.state.productImg,
+      description: this.state.description,
       price: this.state.price,
-      quantity: this.state.price,
-      reference: this.state.price,
-      ingredients: this.state.price,
-      saleByPercentage: this.state.price,
-      saleByValue: this.state.price,
+      quantity: this.state.quantity,
+      reference: this.state.reference,
+      ingredients: this.state.ingredients,
+      saleByPercentage: this.state.saleByPercentage,
+      saleByValue: this.state.saleByValue,
     };
 
     axios
