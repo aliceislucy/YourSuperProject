@@ -29,7 +29,7 @@ const NavBar = (props) => {
               className="navlink"
               exact
               to="/products"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: "none", color: "black" }}
             >
               Products
             </NavLink>
