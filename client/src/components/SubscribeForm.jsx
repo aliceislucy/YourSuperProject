@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import withUser from "./../Auth/withUser";
 import apiHandler from "./../apiHandler";
 import Button from "../components/Button";
@@ -52,14 +51,15 @@ class SubscribeForm extends React.Component {
 
   render() {
     return (
-      <section>
+      <>
         <form
           autoComplete="off"
           className="form"
           onSubmit={this.handleSubmit}
           action=""
         >
-          <label className="label" htmlFor="email" >Email</label>
+          <div className="form-group">
+          <label className="label" htmlFor="email">Email</label>
           <input
             onChange={this.handleChange}
             value={this.state.email}
@@ -67,18 +67,18 @@ class SubscribeForm extends React.Component {
             id="email"
             name="email"
           />
+          </div>
+          <div className="margin"></div>
           <Button text="Subscribe"/>
         </form>
-        <div>
-          <p>To become a privileged member <Link to="/signup">create your account</Link> first</p>
-        </div>
+
         {this.state.flashMessage && (
         <div className="flashMessage">Please sign up first to become a member</div>
         )}
         {this.state.isMember && (
-        <div className="flashMessage">Congrats you're a member ! Enjoy ;)</div>
+        <div className="flashMessage">Congrats you're a member ! Enjoy</div>
         )}
-      </section>
+      </>
     );
   }
 }

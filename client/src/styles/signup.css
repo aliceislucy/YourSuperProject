@@ -1,6 +1,26 @@
-* {
-    border: none;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+.signup label{
+  font-size: 2em;
+  padding-bottom: 2px;
+}
+
+.signup input{
+  margin-left: 2.2vh;
+}
+
+.signup .form-group {
+  display: flex;
+  align-items: center;
+  margin: 1vh 0;
+}
+
+.signup .margin {
+  margin: 4vh 0;
+}
+
+.signup h1{
+  margin-bottom: 0.5vh;
+}
+
+.signup .space{
+  margin-top: 6vh;
+}

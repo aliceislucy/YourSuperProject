@@ -10,6 +10,7 @@ import Cart from "./pages/Cart"
 import Profile from "./pages/Profile"
 import Dashboard from "./pages/Dashboard"
 import Press from "./pages/Press"
+import OurStory from "./pages/OurStory"
 import ProtectedRoute from "./components/ProtectedRoute"
 import ProtectedRouteAdmin from "./components/ProtectedRouteAdmin"
 import SignUpForm from "./components/SignUpForm";
@@ -34,6 +35,7 @@ function App() {
         <Route exact path='/products' component={ProductsList} />
         <Route exact path="/products/:id" component={OneProduct} />
         <Route exact path="/press+media" component={Press} />
+        <Route exact path="/ourstory" component={OurStory} />
         <ProtectedRoute exact path='/cart' component={Cart} />
         <ProtectedRoute exact path='/profile' component={Profile} /> 
         <ProtectedRoute exact path='/dashboard' component={Dashboard} /> 

@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import withUser from "../Auth/withUser";
 import apiHandler from "./../apiHandler";
 import Button from "../components/Button";
+import "./../styles/signup.css";
 
 class SignUpForm extends Component {
   state = {};
@@ -27,26 +28,21 @@ class SignUpForm extends Component {
 
   render() {
     if (this.props.context.isLoggedIn) {
-      // This logic is the same as in the <ProtectedRoute /> component
-      // Here this is handled within the component, if there are some views
-      // that are not meant to be rendered to a logged in user,
-      // you could make a generic component out of it, just like <ProtectedRoute />
-      // and instead of checking if the user is not logged in, check if the user is logged in
-      // and redirect him to whatever page you want, in the case below: the home page.
       return <Redirect to="/" />;
     }
 
     return (
-      <div className="standard-section">
+      <div className="standard-section signup">
         <form
           autoComplete="off"
           className="form"
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         >
-          <h1>Create account</h1>
+          <h1>Create your account</h1>
+          <Link to="/login" style={{ textDecoration: "none", color: "#db8300", fontWeight: "600"}}>➡ Already have an account? Log in</Link>
 
-          <div className="form-group">
+          <div className="form-group space">
             <label className="label" htmlFor="firstName">
               First name
             </label>
@@ -88,13 +84,12 @@ class SignUpForm extends Component {
               name="password"
             />
           </div>
+          <div className="margin"></div>
 
           <Button text="Sign up"/>
         </form>
 
-        <div className="form-section link">
-          <p>Already have an account? </p>
-          <Link to="/login">Log in</Link>
+        <div className="form-section link"> 
         </div>
       </div>
     );

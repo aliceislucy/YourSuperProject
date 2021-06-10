@@ -39,7 +39,7 @@ class LoginForm extends React.Component {
     return (
       <div className="standard-section loginform">
           <h1>Login</h1>
-          <Link className="loginlink" to="/signup" style={{ textDecoration: "none", color: "black", fontWeight: "600"}}>➡ Sign up</Link>
+          <Link className="loginlink" to="/signup" style={{ textDecoration: "none", color: "#00664d", fontWeight: "600"}}>➡ Sign up</Link>
           
 
 
