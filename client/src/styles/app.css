@@ -40,6 +40,7 @@ input {
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
+  border-left: rgba(26, 24, 24, 0.822) 2.5px solid;
 }
 
 ::-webkit-scrollbar-thumb {
