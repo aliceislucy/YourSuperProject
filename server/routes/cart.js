@@ -50,6 +50,13 @@ router.post("/", (req, res, next) => {
           })
           .catch(next);
       } else {
+        //make a loop, If productId Match  => quantity
+        
+
+        // {product: 1, quantity : 3}
+        // {prduct: 17, quantity: 1}
+        // [{product: 1, quantity: 10}, {product: 2, quantity: 4}]
+
         cart.products.push(req.body);
         cart
           .save()

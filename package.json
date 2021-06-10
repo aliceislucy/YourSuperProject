@@ -1,0 +1,21 @@
+{
+  "name": "yoursuperproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "cd ./server && npm install && cd ..",
+    "start": "cd ./server && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliceislucy/YourSuperProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aliceislucy/YourSuperProject/issues"
+  },
+  "homepage": "https://github.com/aliceislucy/YourSuperProject#readme"
+}

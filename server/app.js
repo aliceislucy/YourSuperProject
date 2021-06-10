@@ -10,8 +10,6 @@ const MongoStore = require("connect-mongo");
 const app = express();
 const _DEV_MODE = false;
 
-
-
 //// CORS SETUP ////
 
 app.use(
@@ -22,8 +20,6 @@ app.use(
     // Allows client to send cookies.
   })
 );
-
-
 
 //// SESSION ////
 
@@ -39,8 +35,6 @@ app.use(
   })
 );
 
-
-
 //// GENERAL SETUP ////
 
 app.use(logger("dev"));
@@ -51,10 +45,8 @@ app.use(express.urlencoded({ extended: false }));
 // Alows us to access data sent as urlencoded through req.body
 app.use(cookieParser());
 // Allows us to access cookies through req.cookies
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public/build")));
 // Define public folder to serve static assets, imgs, etc..
-
-
 
 //// DEV MODE ////
 
@@ -82,8 +74,6 @@ if (_DEV_MODE) {
   });
 }
 
-
-
 //// ROUTERS ////
 
 app.use("/api/auth", require("./routes/auth"));
@@ -92,8 +82,20 @@ app.use("/api/order", require("./routes/order"));
 app.use("/api/product", require("./routes/product"));
 app.use("/api/user", require("./routes/user"));
 
+////heroku Set up/////
 
+app.use("/api/*", (req, res, next) => {
+  const error = new Error("Ressource not found.");
+  error.status = 404;
+  next(error);
+});
 
+if (process.env.NODE_ENV === "production") {
+  app.use("*", (req, res, next) => {
+    // If no routes match, send them the React HTML.
+    res.sendFile(path.join(__dirname, "public/build/index.html"));
+  });
+}
 
 //// ERROR HANDLER ////
 
@@ -131,7 +133,5 @@ app.use((err, req, res, next) => {
     }
   }
 });
-
-
 
 module.exports = app;
