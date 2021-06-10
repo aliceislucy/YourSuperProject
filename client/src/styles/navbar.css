@@ -22,25 +22,25 @@ nav {
     z-index: 100;
 }
 
-.nav-list {
+.navbar .nav-list {
     display: flex;
     justify-content: space-around;
     align-items: center;
     list-style-type: none;
 }
-.nav-list, li{
+.navbar .nav-list, li{
     margin-left: 1vh;
     text-decoration: none;
    
 }
 
 
-#logo {
+.navbar #logo {
     height: 8vh;
     margin: 0 1vh;
     min-height: 60px;
 }
-.fas{
+.navbar .fas{
     font-size: 38px;
     color: rgba(26, 24, 24, 0.959);
     margin: 0 0.7vh;

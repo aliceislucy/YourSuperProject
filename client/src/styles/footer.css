@@ -5,11 +5,13 @@
     padding: 0;
   }
 
-  #footer {
-    position: fixed;
+  .footer #footer {
     left: 0;
     bottom: 0;
     width: 100%;
     height: 5vh;
     border-top: rgba(26, 24, 24, 0.822) 2.5px solid;
+  }
+  .footer .icons{
+    
   }

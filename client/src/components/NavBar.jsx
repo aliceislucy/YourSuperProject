@@ -12,7 +12,7 @@ const NavBar = (props) => {
 
   return (
     <>
-      <nav>
+      <nav className="navbar">
         <div id="logo">
           <NavLink exact to="/">
             <img
