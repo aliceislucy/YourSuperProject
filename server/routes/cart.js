@@ -25,7 +25,7 @@ router.delete("/:id", (req, res, next) => {
   Cart.findOneAndUpdate(
     { user: req.session.currentUser.id },
     {
-      $pull : {products : {product: req.params.id} },
+      $pull: { products: { product: req.params.id } },
     },
     { new: true }
   ).then((updatedCart) => {
@@ -37,6 +37,10 @@ router.delete("/:id", (req, res, next) => {
 // => TO ADD A PRODUCT TO THE CURRENT USER'S CART
 
 router.post("/", (req, res, next) => {
+
+
+  console.log(req.body)
+
   Cart.findOne({ user: req.session.currentUser.id })
     .then((cart) => {
       if (cart === null) {
@@ -50,20 +54,27 @@ router.post("/", (req, res, next) => {
           })
           .catch(next);
       } else {
-        //make a loop, If productId Match  => quantity
-        
+      
+        const foundProduct = cart.products.find(item => item.product.toString() === req.body.product)
 
-        // {product: 1, quantity : 3}
-        // {prduct: 17, quantity: 1}
-        // [{product: 1, quantity: 10}, {product: 2, quantity: 4}]
+        if(foundProduct){
+          foundProduct.quantity += req.body.quantity
+        }else{
+          cart.products.push(req.body)
+        }
 
-        cart.products.push(req.body);
-        cart
-          .save()
-          .then(() => {
-            res.status(200).json(cart);
-          })
-          .catch(next);
+        cart.save().then(savedCart => {
+          console.log(savedCart)
+          res.status(200).json(savedCart)
+        }).catch(error => {
+          next(error)
+        })
+
+
+
+
+      
+
       }
     })
     .catch((error) => {

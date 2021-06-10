@@ -19,7 +19,7 @@ class EditProductFrom extends Component {
   componentDidMount() {
     const id = this.props.match.params.id;
     axios
-      .get("http://localhost:5000/api/product/" + id)
+      .get(process.env.REACT_APP_BACKEND_URL+"/api/product/" + id)
       .then((response) => {
         const product = response.data;
         this.setState({
