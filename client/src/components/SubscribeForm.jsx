@@ -1,6 +1,7 @@
 import React from "react";
 import withUser from "./../Auth/withUser";
 import { Link } from "react-router-dom";
+import Button from "../components/Button";
 
 class SubscribeForm extends React.Component {
   state = {
@@ -37,7 +38,7 @@ class SubscribeForm extends React.Component {
             id="email"
             name="email"
           />
-          <button>Subscribe</button>
+          <Button text="Subscribe"/>
         </form>
         <div>
           <p>To become a privileged member <Link to="/signup">create your account</Link> first</p>
