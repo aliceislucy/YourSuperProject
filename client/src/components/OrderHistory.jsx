@@ -8,7 +8,7 @@ class OrderHistory extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/order/", { withCredentials: true })
+      .get(process.env.REACT_APP_BACKEND_URL+"/api/order/", { withCredentials: true })
       .then((res) => {
         this.setState({
           userOrders: res.data,

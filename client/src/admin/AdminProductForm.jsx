@@ -28,7 +28,7 @@ class AdminProductForm extends Component {
     };
 
     axios
-      .post("http://localhost:5000/api/product/", newProduct)
+      .post(process.env.REACT_APP_BACKEND_URL+"/api/product/", newProduct)
       .then((res) => {
         console.log(res.data);
       })

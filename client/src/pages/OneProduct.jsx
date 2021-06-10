@@ -12,7 +12,7 @@ class OneProduct extends React.Component {
     const productId = this.props.match.params.id;
 
     axios
-      .get("http://localhost:5000/api/product/" + productId)
+      .get(process.env.REACT_APP_BACKEND_URL+"/api/product/" + productId)
       .then((res) => {
         this.setState({
           product: res.data,
@@ -40,7 +40,7 @@ class OneProduct extends React.Component {
 
     let addProduct = { quantity : this.state.quantity, product : this.state.product._id }
 
-    axios.post("http://localhost:5000/api/cart/", addProduct, {withCredentials: true})
+    axios.post(process.env.REACT_APP_BACKEND_URL+"/api/cart/", addProduct, {withCredentials: true})
     .catch((error) => {
       console.log(error);
     });

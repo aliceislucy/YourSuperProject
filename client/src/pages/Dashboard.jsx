@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/user/", { withCredentials: true })
+      .get(process.env.REACT_APP_BACKEND_URL+"/api/user/", { withCredentials: true })
       .then((res) => {
         this.setState({
           user: res.data,

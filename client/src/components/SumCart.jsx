@@ -9,7 +9,7 @@ class SumCart extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/cart/", { withCredentials: true })
+      .get(process.env.REACT_APP_BACKEND_URL+"/api/cart/", { withCredentials: true })
       .then((res) => {
         this.setState({
           cartProducts: res.data.products,

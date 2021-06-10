@@ -9,7 +9,7 @@ class AdminHome extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("http://localhost:5000/api/product/")
+      .get(process.env.REACT_APP_BACKEND_URL+"/api/product/")
       .then((response) => {
         this.setState({ products: response.data });
       })
@@ -19,7 +19,7 @@ class AdminHome extends React.Component {
   }
   handleDelete = (productId) => {
     axios
-      .delete("http://localhost:5000/api/product/" + productId)
+      .delete(process.env.REACT_APP_BACKEND_URL+"/api/product/" + productId)
       .then((response) => {
         this.setState({
           products: this.state.products.filter((product) => {
