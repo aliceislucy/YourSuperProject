@@ -11,38 +11,61 @@ const NavBar = (props) => {
   };
 
   return (
-    <nav>
-      <div id="logo">
-        <NavLink exact to="/">
-          <img
-            id="logo"
-            src="https://cdn.shopify.com/s/files/1/1523/0666/t/194/assets/logo.png?v=83684454748928667"
-            alt="YourSuper Logo"
-          />
-        </NavLink>
-      </div>
+    <>
+      <nav>
+        <div id="logo">
+          <NavLink exact to="/">
+            <img
+              id="logo"
+              src="https://cdn.shopify.com/s/files/1/1523/0666/t/194/assets/logo.png?v=83684454748928667"
+              alt="YourSuper Logo"
+            />
+          </NavLink>
+        </div>
 
-      <ul className="nav-list">
-        <li>
-          <NavLink className="navlink" exact to="/press+media">
-            Press + Media
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="navlink" exact to="/about">
-            Our Story
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="navlink" exact to="/products">
-            Products
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className="navlink" exact to="/subscribe">
-            Subscribe
-          </NavLink>
-        </li>
+        <ul className="nav-list">
+          <li>
+            <NavLink
+              className="navlink"
+              exact
+              to="/products"
+              style={{ textDecoration: "none" }}
+            >
+              Products
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="navlink"
+              exact
+              to="/press+media"
+              style={{ textDecoration: "none" }}
+            >
+              Press + Media
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className="navlink"
+              exact
+              to="/about"
+              style={{ textDecoration: "none" }}
+            >
+              Our Story
+            </NavLink>
+          </li>
+          
+          <li>
+            <NavLink
+              className="navlink"
+              exact
+              to="/subscribe"
+              style={{ textDecoration: "none" }}
+            >
+              Subscribe
+            </NavLink>
+          </li>
+        </ul>
         {/* Admin Link ==============================
          {context.isAdmin === true(
         <li>
@@ -51,34 +74,58 @@ const NavBar = (props) => {
           </NavLink>
         </li>)} */}
 
-        {!context.isLoggedIn && (
-          <React.Fragment>
-            <li>
-              <NavLink className="navlink" to="/login">Log in or sign up</NavLink>
-            </li>
-          </React.Fragment>
-        )}
+        <ul className="nav-list">
+          {!context.isLoggedIn && (
+            <React.Fragment>
+              <li>
+                <NavLink
+                  className="navlink"
+                  to="/login"
+                  style={{ textDecoration: "none"}}
+                >
+                  <i class="fas fa-sign-in-alt"></i>
+                </NavLink>
+              </li>
+            </React.Fragment>
+          )}
 
-        {context.isLoggedIn && (
-          <>
-            <li>
-              <NavLink className="navlink" to="/dashboard">Dashboard</NavLink>
-            </li>
-            <li>
-              <NavLink className="navlink" exact to="/cart">
-                Cart
-              </NavLink>
-            </li>
+          {context.isLoggedIn && (
+            <>
+              <li>
+                <NavLink
+                  className="navlink"
+                  to="/dashboard"
+                  style={{ textDecoration: "none" }}
+                >
+                  <i class="fas fa-user-circle"></i>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className="navlink"
+                  exact
+                  to="/cart"
+                  style={{ textDecoration: "none" }}
+                >
+                  <i class="fas fa-shopping-cart"></i>
+                </NavLink>
+              </li>
 
-            <li>
-              <NavLink className="navlink" to="/connection" onClick={handleLogout}>
-                Logout
-              </NavLink>
-            </li>
-          </>
-        )}
-      </ul>
-    </nav>
+              <li>
+                <NavLink
+                  className="navlink"
+                  to="/connection"
+                  onClick={handleLogout}
+                  style={{ textDecoration: "none" }}
+                >
+                  <i class="fas fa-sign-out-alt"></i>
+                </NavLink>
+              </li>
+            </>
+          )}
+        </ul>
+      </nav>
+    </>
   );
 };
 
