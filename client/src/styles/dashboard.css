@@ -1,38 +1,31 @@
-* {
-    border: none;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+.dashboard .profile-picture {
+  height: 10vh;
+  width: 10vh;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 0.5vh solid black;
+  margin-bottom: 2vh;
+}
 
-  .dashboard .profile-picture {
-    height: 10vh;
-    width: 10vh;
-    object-fit: cover;
-    border-radius: 100%;
-    border: 0.5vh solid black;
-    margin-bottom: 2vh;
-  }
+.dashboard .update-profile {
+  display: flex;
+  align-items: center;
+}
 
-  .dashboard .update-profile{
-    display: flex;
-    align-items: center;
-  }
+.dashboard .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .dashboard .header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+.dashboard .hello {
+  margin: 2vh 0;
+  font-size: 3em;
+}
 
-  .dashboard .hello {
-    margin: 2vh 0;
-    font-size: 3em;
-  }
-
-  .dashboard  link{
-    padding: 1.1vh;
-    border: 3px solid black;
-    font-size: 1.4em;
-    font-weight: 600;
-  }
+.dashboard link {
+  padding: 1.1vh;
+  border: 3px solid black;
+  font-size: 1.4em;
+  font-weight: 600;
+}
