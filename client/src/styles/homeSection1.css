@@ -1,9 +1,8 @@
-* {
-    border: none;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Fugaz+One&family=Train+One&display=swap');
+
+/* font-family: 'Bungee Outline', cursive;
+font-family: 'Fugaz One', cursive;
+font-family: 'Train One', cursive; */
 
 .SectionHome1 {
     height: 100vh;
