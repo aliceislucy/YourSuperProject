@@ -13,7 +13,9 @@ class Dashboard extends React.Component {
 
   componentDidMount() {
     axios
-      .get(process.env.REACT_APP_BACKEND_URL+"/api/user/", { withCredentials: true })
+      .get(process.env.REACT_APP_BACKEND_URL + "/api/user/", {
+        withCredentials: true,
+      })
       .then((res) => {
         this.setState({
           user: res.data,
@@ -26,11 +28,17 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className="standard-section dashboard">
+      <div className="standard-section , dashboard">
         <div className="header">
           <h1>My Dashboard</h1>
           <div className="update-profile">
-            <Link className="link" style={{ textDecoration: "none", color: "black", margin: "3vh" }} to="/profile">Update my profile</Link>
+            <Link
+              className="link"
+              style={{ textDecoration: "none", color: "black", margin: "3vh" }}
+              to="/profile"
+            >
+              Update my profile
+            </Link>
             <img
               src={this.state.user.profileImg}
               alt={this.state.user.firstName}
@@ -45,9 +53,10 @@ class Dashboard extends React.Component {
 
             <OrderHistory />
           </div>
-
-          <CartDisplayer />
-          <SumCart />
+          <div>
+            <CartDisplayer />
+            <SumCart />
+          </div>
         </div>
       </div>
     );

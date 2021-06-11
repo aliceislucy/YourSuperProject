@@ -8,7 +8,7 @@ class Cart extends React.Component {
   render() {
     return (
       <div className="standard-section">
-        <h2>Cart</h2>
+        <h1>Cart</h1>
         <div className='flexCart'>
           <div>
             <CartDisplayer />

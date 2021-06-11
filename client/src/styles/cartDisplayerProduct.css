@@ -1,14 +1,27 @@
 .CardProductCard{
+    display: flex;
     border: solid 3px black;
-    height: auto;
-    width: 35vh;
+    height: 17vh;
+    width: 45vh;
     text-align: center;
     margin: 1vh;
 
 }
 
 .CardProductCard img{
-    height: auto;
-    width: 20vh;
+    height: 15vh;
+    width: 15vh;
     
+}
+.CardProductCard label{
+    width: 25vh;
+
+}
+.CardProductCard button{
+    width: 15vh;
+
+}
+.CardProductCard input{
+    padding: 0.3vh;
+    width: 10vh;
 }

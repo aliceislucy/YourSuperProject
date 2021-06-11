@@ -1,11 +1,10 @@
 import React from "react";
 import axios from "axios";
-import "../styles/cartDisplayerProduct.css"
+import "../styles/cartDisplayerProduct.css";
 
 class CartDisplayerProduct extends React.Component {
   state = {
     quantity: this.props.quantity,
-
   };
 
   handleChange = (event) => {
@@ -20,11 +19,13 @@ class CartDisplayerProduct extends React.Component {
   handleDelete = (productId) => {
     //   console.log('productId');
     //   console.log(productId);
-   
+
     axios
-      .delete(process.env.REACT_APP_BACKEND_URL+"/api/cart/" + productId, { withCredentials: true })
+      .delete(process.env.REACT_APP_BACKEND_URL + "/api/cart/" + productId, {
+        withCredentials: true,
+      })
       .then(() => {
-        this.props.onDelete(productId)
+        this.props.onDelete(productId);
       })
       .catch((error) => {
         console.log(error);
@@ -63,7 +64,7 @@ class CartDisplayerProduct extends React.Component {
           </div>
         </form>
         <button onClick={() => this.handleDelete(this.props.productId)}>
-          Delect
+          Cancel
         </button>
       </div>
     );
