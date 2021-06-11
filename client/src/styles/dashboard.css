@@ -38,11 +38,14 @@
 .dashboard .flexpage {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .dashboard .cartsum {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+}
+
+.dashboard .space {
+  width: 4vh;
 }

@@ -56,7 +56,9 @@ class Dashboard extends React.Component {
         <h2 className="hello">Hello <em>{this.state.user.firstName}</em> !</h2>
         <div className="flexpage">
           <div className="cartsum">
+            
             <CartDisplayer />
+            <div className="space"></div>
             <SumCart />
           </div>
 
