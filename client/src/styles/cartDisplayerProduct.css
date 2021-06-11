@@ -1,15 +1,19 @@
 .CardProductCard{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     height: max-content;
     width: max-content;
     text-align: center;
     margin: 2vh;
+    width: 60vh;
+
+
 }
 
 
 .CardProductCard form{
     height: 5vh;
+    
 
 }
 
@@ -41,4 +45,5 @@
 .CardProductCard input{
     padding: 0.3vh;
     width: 10vh;
+    
 }
