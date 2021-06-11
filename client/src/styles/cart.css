@@ -1,11 +1,13 @@
 .cartClass{
     height: 84vh;
+    
 
 }
 
 .flexCart{
     display: flex;
     justify-content: space-evenly;
+        margin-right: 5vh;
 }
 
 .flexCart .ButtonBuy{
@@ -23,4 +25,5 @@
   width: fit-content;
   left: 1vh;
   padding: 0 2vh;
+  margin-right: 10vh;
 }
