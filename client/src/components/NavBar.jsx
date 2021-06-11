@@ -65,6 +65,22 @@ const NavBar = (props) => {
               <p className="link">Subscribe</p>
             </NavLink>
           </li>
+          {context.isLoggedIn && (
+            <>
+              <li className="dashboardNav">
+                <NavLink
+                  to="/dashboard"
+                  style={{ textDecoration: "none", color: "black", marginLeft: '' }}
+                >
+                  <p>Dashboard</p>
+                </NavLink>
+              </li>
+            </>
+          )}
+
+
+
+
         </ul>
         {/* Admin Link ==============================
          {context.isAdmin === true(
@@ -90,18 +106,7 @@ const NavBar = (props) => {
               </React.Fragment>
             </div>
           )}
-          {context.isLoggedIn && (
-            <>
-              <li className="dashboardNav">
-                <NavLink
-                  to="/dashboard"
-                  style={{ textDecoration: "none", color: "black", marginLeft: '10px' }}
-                >
-                  <p>Dashboard</p>
-                </NavLink>
-              </li>
-            </>
-          )}
+          
 
           {context.isLoggedIn && (
             <>
