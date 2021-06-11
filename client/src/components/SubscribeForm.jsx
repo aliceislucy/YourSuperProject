@@ -23,7 +23,7 @@ class SubscribeForm extends React.Component {
     apiHandler
       .subscribe(this.state)
       .then((data) => {
-        this.props.context.setUser(data)
+        // this.props.context.setUser(data)
         this.setState({ isMember: data.isMember});
       })
       .catch((error) => {
@@ -36,13 +36,13 @@ class SubscribeForm extends React.Component {
 
 
       if(currentUser === null) {
-        this.setState({
+        return this.setState({
           flashMessage: true
         })
       }
 
       if(currentUser.isMember) {
-        this.setState({
+        return this.setState({
           isMember: true
         })
       }
