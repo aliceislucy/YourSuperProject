@@ -14,7 +14,7 @@
     background-color: white;
     transition: 0.2s;
 
-    
+
 }
 
 .productCard p {
@@ -22,18 +22,19 @@
     color: black;
     font-family: 'Inter', sans-serif;
     font-size: large;
+
     font-size: 1.5vh;
 }
 
 .productCard img {
     height: 33vh;
     width: auto;
- 
 }
 
-.productCard .soldOut{
+.productCard .soldOut {
     font-size: 5vh;
 }
-.productCard .name{
-    margin-top: -100px;
-}
+
+/* .productCard .dataProductCard {}
+
+.productCard .name {} */
