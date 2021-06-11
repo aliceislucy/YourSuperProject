@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className="standard-section dashboard">
+      <div className="standard-section , dashboard">
         <div className="header">
           <h1>My Dashboard</h1>
           <div className="update-profile">

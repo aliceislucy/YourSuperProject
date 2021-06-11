@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import '../styles/sumCart.css'
 
 class SumCart extends React.Component {
   state = {
@@ -38,15 +39,14 @@ class SumCart extends React.Component {
 
   render() {
     return (
-      <div>
-        <hr />
+      <div className="sumCart">
+        <div className="whyNot">
         <h2>Your Order</h2>
-        <span>SubTotal :  {this.calculSubTotal()} €</span>
-        <br />
-        <span>Estimated Shipping : {this.state.shipping} €</span>
-        <br />
-        <span>Total : {Number(this.calculSubTotal() + this.state.shipping).toFixed(2)}€</span>
-        <br />
+        <span>SubTotal ➡ {this.calculSubTotal()}€</span>
+        <span> Shipping ➡ {this.state.shipping}€ </span>
+        <span className="totalSumBox"> Total:{Number(this.calculSubTotal() + this.state.shipping).toFixed(2)} €</span>
+        
+        </div>
       </div>
     );
   }

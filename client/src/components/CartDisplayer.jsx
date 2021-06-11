@@ -45,6 +45,7 @@ class CartDisplayer extends React.Component {
           //  console.log("productSelected._id");
           //  console.log(productSelected);
           return (
+            <div>
             <CartDisplayerProduct
               productId={productSelected.product._id}
               productName={productSelected.product.name}
@@ -54,6 +55,7 @@ class CartDisplayer extends React.Component {
               quantity={productSelected.quantity}
               key={productSelected.product._id}
             />
+            </div>
           );
         })}
       </div>

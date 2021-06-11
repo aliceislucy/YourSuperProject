@@ -2,20 +2,23 @@ import React from "react";
 import withUser from "../Auth/withUser";
 import CartDisplayer from "../components/CartDisplayer";
 import SumCart from "../components/SumCart";
-import "../styles/button.css"
+import "../styles/button.css";
+import "../styles/cart.css";
 
 class Cart extends React.Component {
   render() {
     return (
       <div className="standard-section">
-        <h2>Cart</h2>
-        <div className='flexCart'>
+        <h1>Cart</h1>
+        <div className="flexCart">
           <div>
             <CartDisplayer />
           </div>
           <div>
             <SumCart />
-            <button className='button-component '>Buy ! </button>
+            <div>
+              <button className="button-component , ButtonBuy">Buy ! </button>
+            </div>
           </div>
         </div>
       </div>

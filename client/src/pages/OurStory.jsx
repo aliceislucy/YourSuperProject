@@ -29,7 +29,9 @@ function OurStory() {
           needs to heal.
         </article>
       </div>
-        <img id="community" src="https://i.shgcdn.com/2877ea39-9876-4b46-8a15-ad4fcb92b7af/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Your Super community" />
+      <div id="community">
+        <img src="https://i.shgcdn.com/2877ea39-9876-4b46-8a15-ad4fcb92b7af/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="Your Super community" />
+      </div>
       <div className="last">
         <h2>
           WE ARE ON A MISSION TO IMPROVE PEOPLE'S HEALTH WITH THE POWER OF SUPER

@@ -1,0 +1,16 @@
+.flexCart{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flexCart .ButtonBuy{
+  width: 10vh;
+}
+
+.flexCart .ButtonBuy{
+    height: 10vh;
+    width: 30vh;
+    text-align: center;
+    margin-left: 13vh;
+    margin-top: 4vh;
+ }
