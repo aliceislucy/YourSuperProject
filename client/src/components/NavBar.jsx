@@ -48,7 +48,7 @@ const NavBar = (props) => {
             <NavLink
               className="navlink"
               exact
-              to="/about"
+              to="/ourstory"
               style={{ textDecoration: "none", color: "black" }}
             >
               <p className="link">OurStory</p>
