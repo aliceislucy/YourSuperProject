@@ -70,19 +70,19 @@ const NavBar = (props) => {
               <li className="dashboardNav">
                 <NavLink
                   to="/dashboard"
-                  style={{ textDecoration: "none", color: "black", marginLeft: '' }}
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    marginLeft: "",
+                  }}
                 >
-                  <p>Dashboard</p>
+                  <p className="link">Dashboard</p>
                 </NavLink>
               </li>
             </>
           )}
 
-
-
-
-        </ul>
-        {/* Admin Link ==============================
+          {/* Admin Link ==============================
          {context.isAdmin === true(
         <li>
           <NavLink className="navlink" exact to="/admin">
@@ -90,9 +90,8 @@ const NavBar = (props) => {
           </NavLink>
         </li>)} */}
 
-        <ul className="nav-list nav2">
           {!context.isLoggedIn && (
-            <div >
+            <div>
               <React.Fragment>
                 <li>
                   <NavLink
@@ -100,13 +99,12 @@ const NavBar = (props) => {
                     to="/login"
                     style={{ textDecoration: "none", color: "black" }}
                   >
-                    Login
+                    <p className="link">Login</p>
                   </NavLink>
                 </li>
               </React.Fragment>
             </div>
           )}
-          
 
           {context.isLoggedIn && (
             <>

@@ -45,7 +45,7 @@ class SumCart extends React.Component {
         <br />
         <span>Estimated Shipping : {this.state.shipping} €</span>
         <br />
-        <span>Total : {Number(this.calculSubTotal()) + this.state.shipping}€</span>
+        <span>Total : {Number(this.calculSubTotal() + this.state.shipping).toFixed(2)}€</span>
         <br />
       </div>
     );
