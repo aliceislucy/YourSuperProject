@@ -8,7 +8,7 @@ import "../styles/cart.css";
 class Cart extends React.Component {
   render() {
     return (
-      <div className="standard-section">
+      <div className="standard-section , cartClass">
         <h1>Cart</h1>
         <div className="flexCart">
           <div>

@@ -46,24 +46,34 @@ class CartDisplayerProduct extends React.Component {
     return (
       <div className="CardProductCard">
         <img src={this.props.productImg} alt={this.props.productName} />
-        <p>{this.props.productName}</p>
-        <form
-          autoComplete="off"
-          className="CardProductCard-form "
-          onSubmit={this.handleSubmit}
+        <div className="dataCartProduct">
+          <p>{this.props.productName}</p>
+          <form
+            autoComplete="off"
+            className="CardProductCard-form "
+            onSubmit={this.handleSubmit}
+          >
+            <label></label>
+            <input
+              type="number"
+              name="quantity"
+              value={this.state.quantity}
+              onChange={this.handleChange}
+            />
+            <div>
+              {(this.state.quantity * this.props.productPrice).toFixed(2)} €
+            </div>
+          </form>
+        </div>
+        <button
+          className=""
+          style={{
+            textDecoration: "none",
+            color: "#5b00a6",
+            fontWeight: "600",
+          }}
+          onClick={() => this.handleDelete(this.props.productId)}
         >
-          <label>Quantity : </label>
-          <input
-            type="number"
-            name="quantity"
-            value={this.state.quantity}
-            onChange={this.handleChange}
-          />
-          <div>
-            {(this.state.quantity * this.props.productPrice).toFixed(2)} €
-          </div>
-        </form>
-        <button onClick={() => this.handleDelete(this.props.productId)}>
           Cancel
         </button>
       </div>

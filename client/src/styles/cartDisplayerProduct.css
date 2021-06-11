@@ -1,10 +1,16 @@
 .CardProductCard{
     display: flex;
+    justify-content: space-between;
+   
     border: solid 3px black;
-    height: 17vh;
-    width: 45vh;
+    height: 19vh;
+    width: 60vh;
     text-align: center;
     margin: 1vh;
+}
+
+.CardProductCard form{
+    height: 5vh;
 
 }
 
@@ -13,14 +19,26 @@
     width: 15vh;
     
 }
-.CardProductCard label{
-    width: 25vh;
+.CardProductCard .dataCartProduct{
+    align-items:center;
+    font-size: 3vh;
+
+    width: 20vh;
+    margin-top: 1vh;
+   
 
 }
 .CardProductCard button{
     width: 15vh;
-
+    width: fit-content;
+    padding: 0 5px;
 }
+.CardProductCard button:hover{
+    background-color: rgba(0, 0, 255, 0.363);
+    width: fit-content;
+    padding: 0 5px;
+}
+
 .CardProductCard input{
     padding: 0.3vh;
     width: 10vh;
