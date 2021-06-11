@@ -82,13 +82,13 @@ const NavBar = (props) => {
             </>
           )}
 
-          {/* Admin Link ==============================
-         {context.isAdmin === true(
+
+         {context.isAdmin && (
         <li>
           <NavLink className="navlink" exact to="/admin">
-            Admin Page
+            Admin
           </NavLink>
-        </li>)} */}
+        </li>)}
 
           {!context.isLoggedIn && (
             <div>

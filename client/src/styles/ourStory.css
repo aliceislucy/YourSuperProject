@@ -1,0 +1,33 @@
+.ourstory .first,
+.ourstory .middle {
+  font-size: 1.4em;
+  margin: 4vh 10vh 6vh 0;
+  text-align: justify;
+  line-height: 32px;
+}
+
+.ourstory .first h2 {
+  color: #5cb300;
+  margin-bottom: 4vh;
+}
+
+.ourstory .middle h2 {
+  color: rgb(191, 143, 152);
+  margin-bottom: 4vh;
+}
+
+.ourstory .last h2 {
+  color: rgb(88, 122, 194);
+  margin: 3vh;
+}
+
+.ourstory .last {
+  text-align: center;
+  width: 70vh;
+  margin: 10vh auto;
+  line-height: 32px;
+}
+
+.ourstory #community {
+    margin-left: 40vh;
+}

@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&display=swap");
+
+.pressMedia .title {
+  font-family: "Playfair Display SC", serif;
+  font-size: 5em;
+}
+
+.pressMedia h1 {
+  margin-top: 6vh;
+}
+
+.pressMedia .articlebox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pressMedia .article {
+  display: flex;
+  flex-direction: column;
+  width: 50vh;
+  height: 30vh;
+  margin: 0 4vh;
+  margin-bottom: 4vh;
+  border-bottom: 3px solid orange;
+}
+
+.pressMedia .article img {
+  width: 53vh;
+}
+
+.pressMedia .article #preview {
+
+  color: black;
+}
+
+.pressMedia .article div {
+    margin-top: 1.5vh;
+    font-weight: 700;
+    color: rgb(168, 0, 146);
+  }
+
+.pressMedia iframe {
+    width: 50vh;
+    height: 30vh;
+    margin: 0 4vh;
+}
+
+.pressMedia .iframe {
+display: flex;
+}
