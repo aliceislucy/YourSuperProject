@@ -1,9 +1,3 @@
-* {
-  border: none;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 #footer {
   display: flex;
@@ -23,6 +17,7 @@
   align-items: center;
   justify-content: space-around;
   left: 1vh;
+  left: 5vw
 
 }
 .footer .icons2{

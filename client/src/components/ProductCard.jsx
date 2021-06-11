@@ -9,9 +9,9 @@ function ProductCard({ productImg, name, productId, quantity, handleSubmit }) {
       <div className="productCard">
         <Link to={`/products/${productId}`}>
           <img src={productImg} alt={name} />
-          <p>{name}</p>
+          <p className="name">{name}</p>
         </Link>
-          {quantity ? <button  className="button-component" name={productId} onClick={() =>handleSubmit(productId)}><p>Add to cart</p></button> : <p>Sold Out</p>}
+          {quantity ? <button  className="button-component" name={productId} onClick={() =>handleSubmit(productId)}><p>Add to cart</p></button> : <p className="soldOut">Sold Out</p>}
       </div>
     );
 }

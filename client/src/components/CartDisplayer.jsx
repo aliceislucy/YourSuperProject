@@ -1,6 +1,7 @@
 import React from "react";
 import CartDisplayerProduct from "./CartDisplayerProduct";
 import axios from "axios";
+import "../styles/cartDisplayer.css"
 
 class CartDisplayer extends React.Component {
   state = {
@@ -38,7 +39,7 @@ class CartDisplayer extends React.Component {
     if (!this.state.cartProducts) return null;
     // console.log(this.state.cartProducts)
     return (
-      <div>
+      <div className='cartDisplayerFlex'>
         {this.state.cartProducts.map((productSelected) => {
           
           //  console.log("productSelected._id");

@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "../styles/cartDisplayerProduct.css"
 
 class CartDisplayerProduct extends React.Component {
   state = {

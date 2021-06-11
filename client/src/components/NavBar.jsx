@@ -12,7 +12,7 @@ const NavBar = (props) => {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar , nav1">
         <div id="logo">
           <NavLink exact to="/">
             <img
@@ -22,16 +22,16 @@ const NavBar = (props) => {
             />
           </NavLink>
         </div>
-    
-        <ul className="nav-list">
+
+        <ul className="nav-list , nav1">
           <li>
             <NavLink
-              className="navlink"
+              className="navlink, boxLink"
               exact
               to="/products"
               style={{ textDecoration: "none", color: "black" }}
             >
-              Products
+              <p className="link">Products</p>
             </NavLink>
           </li>
           <li>
@@ -41,7 +41,7 @@ const NavBar = (props) => {
               to="/press+media"
               style={{ textDecoration: "none", color: "black" }}
             >
-              Press + Media
+              <p className="link">Press+Media</p>
             </NavLink>
           </li>
           <li>
@@ -51,10 +51,10 @@ const NavBar = (props) => {
               to="/about"
               style={{ textDecoration: "none", color: "black" }}
             >
-              Our Story
+              <p className="link">OurStory</p>
             </NavLink>
           </li>
-          
+
           <li>
             <NavLink
               className="navlink"
@@ -62,7 +62,7 @@ const NavBar = (props) => {
               to="/subscribe"
               style={{ textDecoration: "none", color: "black" }}
             >
-              Subscribe
+              <p className="link">Subscribe</p>
             </NavLink>
           </li>
         </ul>
@@ -74,32 +74,37 @@ const NavBar = (props) => {
           </NavLink>
         </li>)} */}
 
-        <ul className="nav-list">
+        <ul className="nav-list nav2">
           {!context.isLoggedIn && (
-            <React.Fragment>
-              <li>
-                <NavLink
-                  className="navlink"
-                  to="/login"
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  Login
-                </NavLink>
-              </li>
-            </React.Fragment>
+            <div >
+              <React.Fragment>
+                <li>
+                  <NavLink
+                    className="navlink"
+                    to="/login"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    Login
+                  </NavLink>
+                </li>
+              </React.Fragment>
+            </div>
           )}
-
           {context.isLoggedIn && (
             <>
-              <li>
+              <li className="dashboardNav">
                 <NavLink
-                  className="navlink"
                   to="/dashboard"
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{ textDecoration: "none", color: "black", marginLeft: '10px' }}
                 >
                   <p>Dashboard</p>
                 </NavLink>
               </li>
+            </>
+          )}
+
+          {context.isLoggedIn && (
+            <>
               <li>
                 <NavLink
                   className="navlink"

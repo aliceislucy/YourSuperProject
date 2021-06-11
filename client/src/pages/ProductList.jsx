@@ -5,7 +5,7 @@ class ProducList extends React.Component {
   render() {
     return (
       <div className="standard-section">
-        <h1>ProducList Page</h1>
+        <h1>Products</h1>
         <ProductDisplayer />
       </div>
     );

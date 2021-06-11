@@ -8,4 +8,20 @@
 .SectionHome1 {
     height: 100vh;
     border-bottom: 3px solid;
+    background: url("https://res.cloudinary.com/polseznec/image/upload/v1623367313/Functional-powder-brand-Your-Super-enters-US-market-removebg_acsmlp.png") no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: unset;
+
+}
+
+.SectionHome1 h1 {
+    margin: 4vh;
+    font-size: 9vh;
+}
+
+.SectionHome1 h2 {
+    margin: 3vh;
+    margin-right: 50%;
 }

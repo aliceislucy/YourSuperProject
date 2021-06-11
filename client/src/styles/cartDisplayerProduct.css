@@ -1,0 +1,14 @@
+.CardProductCard{
+    border: solid 3px black;
+    height: auto;
+    width: 35vh;
+    text-align: center;
+    margin: 1vh;
+
+}
+
+.CardProductCard img{
+    height: auto;
+    width: 20vh;
+    
+}
