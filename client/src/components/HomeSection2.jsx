@@ -4,7 +4,7 @@ import ProductDisplayer from "./ProductDisplayer"
 const HomeSection2 = () => {
   return (
     <>
-      <section>
+      <section className="standard-section">
         <h1>Our Products</h1>
         <ProductDisplayer />
       </section>
