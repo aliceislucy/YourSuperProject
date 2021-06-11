@@ -1,7 +1,0 @@
-.cartDisplayerFlex{
-    display: flex;
-    flex-direction: column;
-    border : solid 3px black;
-    width: 63vh;
-    left: 1vh;
-}

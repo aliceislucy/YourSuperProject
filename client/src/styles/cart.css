@@ -9,11 +9,18 @@
 }
 
 .flexCart .ButtonBuy{
-
-  height: 10vh;
-  width: 30vh;
+  height: 7vh;
+  width: 20vh;
   text-align: center;
   margin-left: 13vh;
   margin-top: 4vh;
 }
 
+.cartDisplayerFlex{
+  display: flex;
+  flex-direction: column;
+  border : solid 3px black;
+  width: fit-content;
+  left: 1vh;
+  padding: 0 2vh;
+}

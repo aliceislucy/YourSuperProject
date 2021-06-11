@@ -2,7 +2,6 @@ import React from "react";
 import withUser from "../Auth/withUser";
 import CartDisplayer from "../components/CartDisplayer";
 import SumCart from "../components/SumCart";
-import "../styles/button.css";
 import "../styles/cart.css";
 
 class Cart extends React.Component {
@@ -16,9 +15,6 @@ class Cart extends React.Component {
           </div>
           <div>
             <SumCart />
-            <div>
-              <button className="button-component , ButtonBuy">Buy ! </button>
-            </div>
           </div>
         </div>
       </div>

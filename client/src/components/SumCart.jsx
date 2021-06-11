@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Button from "./Button"
 import '../styles/sumCart.css'
 
 class SumCart extends React.Component {
@@ -22,31 +23,40 @@ class SumCart extends React.Component {
   }
 
   calculSubTotal(){
-    let allProducts =[...this.state.cartProducts];
+    let allProducts = [...this.state.cartProducts];
     let quantityPrice = []
     let sum = 0;
+
     allProducts.map((product) =>{
       quantityPrice.push(product.quantity * product.product.price)
-      return quantityPrice;
     })
+
     quantityPrice.forEach((product)=>{
       sum += product
-      return sum;
     })
+    
     sum = sum.toFixed(2)
     return sum
   }
 
   render() {
+    let total = Number(this.calculSubTotal()) + this.state.shipping
     return (
+      <div>
       <div className="sumCart">
-        <div className="whyNot">
+
+        <div className="text">
+
         <h2>Your Order</h2>
-        <span>SubTotal ➡ {this.calculSubTotal()}€</span>
-        <span> Shipping ➡ {this.state.shipping}€ </span>
-        <span className="totalSumBox"> Total:{Number(this.calculSubTotal() + this.state.shipping).toFixed(2)} €</span>
-        
+        <div>SubTotal  ➡  {this.calculSubTotal()} €</div>
+        <div> Shipping  ➡  {this.state.shipping} € </div>
+        <div className="totalSumBox"> Total : {total.toFixed(2)} €</div>
+
         </div>
+
+
+      </div>
+        <Button className="ButtonBuy" text="Buy now"/>
       </div>
     );
   }

@@ -71,10 +71,11 @@ class CartDisplayerProduct extends React.Component {
             textDecoration: "none",
             color: "#5b00a6",
             fontWeight: "600",
+            width: "13vh"
           }}
           onClick={() => this.handleDelete(this.props.productId)}
         >
-          Cancel
+          DELETE
         </button>
       </div>
     );

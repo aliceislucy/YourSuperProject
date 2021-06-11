@@ -3,7 +3,7 @@ import { Redirect, Route } from "react-router-dom";
 import withUser  from "./../Auth/withUser";
 
 const ProtectedRoute = ({ component: Component, context, ...rest }) => {
-console.log(context);
+// console.log(context);
   if (context.isLoading) {
     return null;
   } else if (context.isLoggedIn) {

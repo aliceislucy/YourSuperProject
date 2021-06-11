@@ -1,13 +1,12 @@
 .CardProductCard{
     display: flex;
     justify-content: space-between;
-   
-    border: solid 3px black;
-    height: 19vh;
-    width: 60vh;
+    height: max-content;
+    width: max-content;
     text-align: center;
-    margin: 1vh;
+    margin: 2vh;
 }
+
 
 .CardProductCard form{
     height: 5vh;
@@ -23,7 +22,7 @@
     align-items:center;
     font-size: 3vh;
 
-    width: 20vh;
+    width: 50vh;
     margin-top: 1vh;
    
 

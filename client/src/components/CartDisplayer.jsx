@@ -1,7 +1,7 @@
 import React from "react";
 import CartDisplayerProduct from "./CartDisplayerProduct";
 import axios from "axios";
-import "../styles/cartDisplayer.css"
+import "../styles/cart.css"
 
 class CartDisplayer extends React.Component {
   state = {
@@ -32,7 +32,7 @@ class CartDisplayer extends React.Component {
   }
 
   render() {
-    console.log(this.state.cartProducts)
+    // console.log(this.state.cartProducts)
     // console.log("---Productscard in UserCart---");
     // console.log(this.state.cartProducts);
 

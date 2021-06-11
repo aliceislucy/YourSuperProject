@@ -3,33 +3,20 @@
     font-size: 3.5vh;
     border: 3px solid black;
     width: 50vh;
-    height: 26vh;
-    padding-right: 2vh;
-    padding-left: 2vh;
-    padding-top: 0.6vh;
-    margin: 3vh;
-    display: flex;
-    justify-content: center;
-}
-
-.sumCart h1{
+    height: 29vh;
+    margin-bottom: 5vh;
     padding: 2vh;
-}
-.whyNot{
-    text-align:justify;
-}
-.sumCart .whyNot {
-    padding: 10px;
 
 }
 
-
-
+.sumCart .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+}
 
 .sumCart h2{
-
     text-decoration:underline ;
     padding: 0.4vh;
-
-
+    margin-bottom: 1.5vh;
 }
