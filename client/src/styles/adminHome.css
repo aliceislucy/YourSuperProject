@@ -4,3 +4,21 @@
     margin: 0;
     padding: 0;
 }
+
+.flexAdminProduct {
+    display: flex;
+    justify-content: center;
+    border: solid black 1px;
+    width: 60vh;
+    margin-left: 60vh;
+}
+
+.AdminProductList img {
+    width: 15vh;
+    height: auto;
+}
+
+.flexAdminProduct{
+    display: flex;
+    
+}

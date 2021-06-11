@@ -38,7 +38,7 @@ class AdminHome extends React.Component {
         <Link to="/admin/createproduct">Create Product</Link>
         {this.state.products.map((product) => {
           return (
-            <div key={product._id} className="Product">
+            <div key={product._id} className="Product, flexAdminProduct">
               <div>
                 <img src={product.productImg} alt={product.name} />
               </div>
